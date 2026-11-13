@@ -1,0 +1,1173 @@
+/* ============================================================================
+   Pinecone site mockup | Learn / Tools / About
+
+   Copy centred, then the five topics as FULL-WIDTH ROWS. Each row splits:
+   what the topic is on the left, the questions it answers on the right.
+
+   Giving the questions their own column is the point of this layout. It is
+   why three questions fit per topic where a narrow sidebar list held two, and
+   it would hold five without strain. The cost is height: rows stack, so this
+   is the tallest of the layouts considered.
+
+   Numbered because the five genuinely build on each other, and rows rather
+   than a grid because five never divides into a tidy one.
+
+   The five are numbered because they genuinely build on each other. The
+   numbers show the order; they do not gate it. A tool count on each makes the
+   pairing of explanation and calculator visible at a glance, rather than only
+   claimed in the lede.
+
+   Palette is 02.1 Core Interface, with warm ivory and sage from 02.2 for the
+   about band and the illustration. Contrast measured, not eyeballed. On warm
+   ivory: navy 10.06, charcoal 13.71, muted 7.52. On navy: white 11.96, sand
+   6.37. White sits at only 1.10 on mist, so bordered surfaces carry a border.
+   Single theme by project convention: the palette is the brand.
+   ========================================================================= */
+@font-face { font-family:'Source Sans 3'; font-weight:400 700; font-display:swap;
+  src:url('fonts/SourceSans3-var.woff2') format('woff2'); }
+@font-face { font-family:'Source Serif 4'; font-weight:900; font-display:swap;
+  src:url('fonts/SourceSerif4-900.woff2') format('woff2'); }
+
+:root{
+  color-scheme:only light;
+  --navy:#0D3B4F; --light-teal:#006F7A; --dark-palo:#014240; --palo-alto:#1B6D5F;
+  --bay:#6FA287; --sand:#D2BA92; --ivory:#F2EBD9; --sage:#79A290;
+  --mist:#F4F4F4; --fog:#DAD7CB;
+  --ink:#231F20; --muted:#4A4A42; --soft:#5D6A72; --line:#E1E5E4;
+  --sans:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --serif:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+html,body{margin:0;padding:0}
+body{background:#fff;color:var(--ink);font:17px/1.55 var(--sans);
+  -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+h1,h2,h3{margin:0;line-height:1.14;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+ul,ol{margin:0;padding:0;list-style:none}
+.in{max-width:1080px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:2.5px solid var(--navy);outline-offset:2px;border-radius:4px}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;
+  padding:11px 16px;z-index:50;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+
+/* ------------------------------------------------------------------ header */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.93);
+  backdrop-filter:saturate(1.6) blur(8px);border-bottom:1px solid var(--line)}
+.bar{max-width:1080px;margin:0 auto;padding:11px 20px;display:flex;
+  align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto}
+.mark{width:17px;height:22px;flex:0 0 auto;display:block;color:var(--palo-alto)}
+.name{font-family:var(--serif);font-weight:900;font-size:19px;color:var(--navy);
+  line-height:1.05}
+.name small{display:block;font-family:var(--sans);font-weight:400;font-size:10px;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--soft)}
+/* even three links plus the wordmark overflow a 320px phone, so the nav
+   scrolls sideways rather than pushing the page wider */
+.top nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.top nav::-webkit-scrollbar{display:none}
+.top nav a{flex:0 0 auto;font-size:14.5px;font-weight:600;color:var(--soft);
+  text-decoration:none;padding:8px 11px;border-radius:7px;white-space:nowrap}
+.top nav a:hover{color:var(--dark-palo);background:var(--mist)}
+
+/* --------------------------------------------------------- opening: copy */
+.opening{padding:52px 0 44px}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--light-teal);margin-bottom:14px}
+h1{font-family:var(--serif);font-weight:900;font-size:38px;color:var(--navy);
+  text-wrap:balance;max-width:18ch}
+.opening .lede{margin-top:16px;font-size:18.5px;line-height:1.5;color:var(--muted);
+  max-width:56ch}
+
+/* ----------------------------------------- learn: full-width topic rows */
+/* Each row splits in two: what the topic is, and the questions it answers.
+   Questions get their own column, which is why three fit here where only two
+   fitted in a narrow sidebar list. */
+.learn{background:var(--mist);border-top:1px solid var(--line)}
+.rows{display:grid;gap:14px;margin-top:26px}
+.row{background:#fff;border:1px solid var(--line);border-radius:13px;
+  padding:20px 19px;display:grid;gap:18px;transition:.14s}
+.row:hover{border-color:var(--palo-alto);box-shadow:0 8px 22px rgba(13,59,79,.07)}
+.rmeta{min-width:0}
+.rnum{display:inline-block;font-family:var(--serif);font-weight:900;font-size:13px;
+  color:#fff;background:var(--palo-alto);border-radius:999px;padding:3px 10px;
+  font-variant-numeric:tabular-nums}
+.rmeta h3{margin-top:10px;font-family:var(--serif);font-weight:900;font-size:23px;
+  line-height:1.15}
+.rmeta h3 a{color:var(--navy);text-decoration:none}
+.rmeta h3 a::after{content:' \2192';color:var(--light-teal);font-family:var(--sans);
+  font-size:19px;font-weight:700}
+.row:hover .rmeta h3 a{color:var(--dark-palo)}
+.rdesc{margin-top:7px;font-size:15.5px;color:var(--muted);max-width:40ch}
+.rtools{margin-top:11px;font-size:13px;font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--light-teal)}
+
+.rq{display:grid;gap:1px;align-self:start;background:var(--line);
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;min-width:0}
+.rq li{background:#fff}
+.rq a{display:block;padding:12px 14px;font-size:15.5px;line-height:1.35;
+  color:var(--ink);text-decoration:none;transition:.1s}
+.rq a:hover{background:#F2F7F5;color:var(--dark-palo)}
+
+/* ============================================== topic page: fundamentals */
+.thero{padding:34px 0 30px}
+.crumb{display:flex;align-items:center;gap:9px;font-size:14.5px;color:var(--soft);
+  margin-bottom:20px}
+.crumb a{color:var(--light-teal);font-weight:600;text-decoration:none}
+.crumb a:hover{color:var(--dark-palo);text-decoration:underline}
+.ttitle{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.num.big{font-size:15px;padding:5px 12px}
+.thero h1{font-size:34px}
+.thero .lede{margin-top:15px;font-size:18.5px;line-height:1.5;color:var(--muted);
+  max-width:58ch}
+
+/* The question is the headline, because the question is what gets typed into
+   a search bar. The short answer sits directly under it, so the page is worth
+   something to a reader who never opens anything. */
+.qband{background:var(--mist);border-top:1px solid var(--line)}
+.qlist{display:grid;gap:14px}
+.q{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px 19px}
+.q h2,.q h3{font-family:var(--serif);font-weight:900;font-size:22px;letter-spacing:-.02em}
+.q h2 a,.q h3 a{color:var(--navy);text-decoration:none}
+.q h2 a::after,.q h3 a::after{content:' \2192';color:var(--light-teal);
+  font-family:var(--sans);font-size:18px;font-weight:700}
+.q:hover{border-color:var(--palo-alto)}
+.q:hover h2 a,.q:hover h3 a{color:var(--dark-palo)}
+/* a topic with an "and" in its name splits into the two halves it names */
+.qgroup{margin-top:30px;margin-bottom:13px;font-family:var(--sans);font-size:12.5px;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--light-teal);
+  padding-bottom:9px;border-bottom:1.5px solid var(--sand)}
+.qgroup:first-of-type{margin-top:26px}
+.short{margin-top:9px;font-size:16.5px;line-height:1.5;color:var(--muted);max-width:68ch}
+.covers{display:flex;flex-wrap:wrap;gap:6px;align-items:baseline;margin-top:14px;
+  padding-top:13px;border-top:1px solid var(--line);font-size:13px;color:var(--soft)}
+.covers span{font-weight:600;color:var(--light-teal);background:#EDF4F3;
+  border-radius:999px;padding:4px 10px}
+
+.nextband{background:#fff;padding-top:40px;padding-bottom:56px}
+.nextup{display:block;border:1px solid var(--line);border-left:4px solid var(--palo-alto);
+  border-radius:0 13px 13px 0;padding:18px 20px;text-decoration:none;transition:.14s}
+.nextup:hover{border-color:var(--palo-alto);background:#F7FBFA}
+.nlabel{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--light-teal)}
+.nname{display:block;margin-top:7px;font-family:var(--serif);font-weight:900;
+  font-size:21px;color:var(--navy)}
+.nname::after{content:' \2192';font-family:var(--sans);font-size:18px;
+  color:var(--light-teal)}
+.nsub{display:block;margin-top:5px;font-size:15.5px;color:var(--muted);max-width:56ch}
+
+/* ------------------------------------------------------------------- bands */
+.band{padding:46px 0 52px}
+.tools{background:var(--navy);color:#fff}
+.about{background:var(--ivory);border-top:1px solid var(--fog)}
+.seclabel{font-family:var(--serif);font-weight:900;font-size:28px;color:var(--navy)}
+.seclede{margin-top:9px;font-size:17px;color:var(--muted);max-width:58ch}
+.tools .seclabel{color:#fff}
+.tools .seclede{color:#CBD9DE}
+.sechead{display:grid;gap:14px;margin-bottom:26px}
+.seeall{justify-self:start;font-size:15px;font-weight:700;color:var(--sand);
+  text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:8px;
+  padding:9px 16px;white-space:nowrap;transition:.12s}
+.seeall::after{content:' \2192'}
+.seeall:hover{background:rgba(255,255,255,.1);border-color:var(--sand)}
+
+/* ------------------------------------------------------------------- tools */
+.grid{display:grid;gap:14px}
+.tool{display:block;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.22);border-radius:13px;padding:18px;
+  text-decoration:none;transition:.14s}
+.tool:hover{background:rgba(255,255,255,.12);border-color:var(--sand);
+  transform:translateY(-2px)}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--sand)}
+.tool h3{margin-top:8px;font-family:var(--serif);font-weight:900;font-size:20px;color:#fff}
+.tool p{margin-top:7px;font-size:15.5px;color:#CBD9DE}
+
+/* ------------------------------------------------------------------- about */
+.abgrid{display:grid;gap:26px;align-items:center}
+.points{display:grid;gap:12px;margin-top:20px}
+.points li{position:relative;padding-left:24px;font-size:16px;color:var(--muted);
+  max-width:52ch}
+.points li::before{content:'';position:absolute;left:0;top:8px;width:11px;height:11px;
+  border-radius:3px;background:var(--sage)}
+.points b{color:var(--ink)}
+.abart{display:flex;justify-content:center}
+.cone{width:150px;height:auto;max-width:100%}
+
+/* ------------------------------------------------------------------ footer */
+footer{background:var(--navy);color:#fff;padding:30px 0 40px;
+  border-top:1px solid rgba(255,255,255,.16)}
+.fgrid{display:grid;gap:22px}
+.fbrand{font-family:var(--serif);font-weight:900;font-size:21px}
+.fbrand small{display:block;font-family:var(--sans);font-weight:400;font-size:10.5px;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--sand);margin-top:3px}
+.fline{margin-top:12px;font-size:15px;color:#CBD9DE;max-width:46ch}
+.fnav{display:flex;flex-wrap:wrap;gap:14px 20px}
+.fnav a{font-size:15px;color:#CBD9DE;text-decoration:none}
+.fnav a:hover{color:#fff;text-decoration:underline}
+
+/* ------------------------------------------------------------ wider screens */
+@media (min-width:800px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  /* the split that makes this layout worth it */
+  .row{grid-template-columns:minmax(250px,1fr) minmax(0,1.3fr);gap:32px;
+    padding:24px;align-items:start}
+  .thero{padding:40px 0 34px}
+  .thero h1{font-size:40px}
+  .abgrid{grid-template-columns:1fr 190px}
+  .fgrid{grid-template-columns:1fr auto;align-items:end}
+  .sechead{grid-template-columns:1fr auto;align-items:end;gap:24px}
+  .seeall{justify-self:end}
+  h1{font-size:44px}
+  .cone{width:180px}
+}
+@media (min-width:1040px){
+  .row{grid-template-columns:minmax(290px,1fr) minmax(0,1.35fr);gap:44px}
+  h1{font-size:48px}
+  .seclabel{font-size:31px}
+  .abgrid{grid-template-columns:1fr 240px}
+  .cone{width:220px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .tool:hover,.row:hover{box-shadow:none}
+}
+@media print{
+  .top,.skip{display:none !important}
+  .band,.tools,footer{background:#fff;color:var(--ink)}
+  .tools .seclabel,.tools .seclede,.tool h3,.tool p,.seeall{color:var(--navy)}
+  .tool,.row,.q{break-inside:avoid;border-color:var(--line)}
+}
+
+/* ======================================================= article: reading
+   The first long-form layout on the site. Everything before this was
+   navigation: cards, questions, three-line answers. Sustained reading wants
+   different settings, so body steps up from 16.5 to 18 and the leading opens
+   from 1.5 to 1.68. Measure stays at 68ch to match the short answers.
+
+   The global reset kills list markers and all margins, so prose restores both
+   explicitly. Anything inside .prose is authored content and may be edited in
+   place, which is why spacing lives on the elements rather than on wrappers
+   a writer cannot see. */
+/* The reading measure is 68ch (~625px). The shared .in container is 1080px, and
+   the column is left-aligned in it, so on a wide screen 435px of nothing piled up
+   to the right and the article read as "too narrow". Narrow the container on
+   article pages instead of widening the measure: long lines are harder to read.
+   Header and footer keep the full 1080px. */
+.artmain{padding:34px 0 10px}
+.artmain .in{max-width:700px}
+/* The bare h1 rule caps at 18ch for the landing hero, which squeezed article
+   titles into a 400px column and split "How Credit Works" across lines. An
+   article title is not a landing hero: wider cap, and the same size as the
+   topic pages it sits under. */
+/* .prose zeroes the top margin on its first child, and .arthead carried no
+   bottom margin, so an article with no .contents block ran its body straight
+   into the h1 with a 0px gap. Only debt-problem.html looked right, and only
+   because its contents nav happened to supply the space. 26px matches that
+   nav's own margin-top, and adjacent margins collapse, so pages that do have
+   a contents block are unchanged. */
+.arthead{max-width:68ch;margin-bottom:26px}
+.arthead h1{font-size:34px;max-width:24ch}
+.arthead .lede{margin-top:14px;font-size:18.5px;line-height:1.5;
+  color:var(--muted)}
+.prose{max-width:68ch;font-size:18px;line-height:1.68;color:var(--ink)}
+.prose > *:first-child{margin-top:0}
+.prose p{margin:1.15em 0 0}
+.prose h2{margin:2.1em 0 .45em;font-family:var(--serif);font-weight:900;
+  font-size:26px;line-height:1.2;color:var(--navy)}
+.prose h3{margin:1.75em 0 .35em;font-family:var(--serif);font-weight:900;
+  font-size:20px;line-height:1.25;color:var(--dark-palo)}
+.prose strong{font-weight:700;color:var(--navy)}
+.prose em{font-style:italic}
+.prose a{color:var(--light-teal);font-weight:600;
+  text-decoration:underline;text-underline-offset:2px;
+  text-decoration-color:rgba(0,111,122,.4)}
+.prose a:hover{color:var(--dark-palo);text-decoration-color:currentColor}
+.prose ul,.prose ol{margin:1.1em 0 0;padding-left:24px}
+.prose ul{list-style:disc}
+.prose ol{list-style:decimal}
+.prose li{margin-top:.5em;padding-left:4px}
+.prose li::marker{color:var(--palo-alto)}
+.prose hr{margin:2.2em 0;border:0;border-top:1px solid var(--line)}
+
+/* A pull quote earns its size by being the sentence the piece turns on, so
+   there is at most one per article. */
+.prose blockquote{margin:1.9em 0;padding:0 0 0 20px;
+  border-left:4px solid var(--sand);
+  font-family:var(--serif);font-weight:900;font-size:22px;line-height:1.35;
+  letter-spacing:-.015em;color:var(--navy)}
+.prose blockquote p{margin:0}
+
+/* An author's marker, not emphasis: "come back to this". A pale tint
+   disappeared inside the ivory boxes (1.09 against that ground), so this is
+   the full ochre plus a rule, which reads on white, ivory and mist alike.
+   Ink on it measures 9.41. */
+mark.todo{background:#E9BF69;color:var(--ink);
+  box-shadow:inset 0 -2px 0 #A9761F;border-radius:2px;
+  padding:1px 2px;margin:0 -1px}
+body.editing mark.todo{cursor:pointer}
+
+/* A definition list where the marker carries meaning, so the icon replaces
+   the number rather than sitting beside it. White glyphs measured on each
+   tile: navy 11.96, palo alto 6.18, brick 11.89. */
+.prose .termlist{margin:1.4em 0 0;padding:0;list-style:none;
+  display:grid;gap:12px}
+.prose .termlist li{margin:0;padding:0;display:flex;gap:15px;
+  align-items:center}
+.prose .termlist li::marker{content:none}
+.ticon{flex:0 0 auto;width:48px;height:48px;border-radius:11px;
+  display:grid;place-items:center;background:var(--navy)}
+.ticon svg{width:26px;height:26px;display:block}
+.ticon.ti{background:var(--palo-alto)}
+.ticon.tt{background:#651C32}
+.prose .termlist .tbody{min-width:0}
+
+/* Sits at the top of a piece and states the term it rests on. Shares the
+   callout's ivory ground so it reads as an aside, but takes serif at pull-quote
+   size so it does not read as a second "worth knowing". */
+.prose .defbox{margin:1.6em 0;padding:18px 20px;background:var(--ivory);
+  border:1px solid var(--fog);border-left:4px solid var(--light-teal);
+  border-radius:0 13px 13px 0}
+.prose .defbox p{margin:0;font-family:var(--serif);font-weight:900;
+  font-size:20px;line-height:1.35;letter-spacing:-.015em;color:var(--navy)}
+.prose .defbox .ctitle{display:block;margin-bottom:7px;font-size:12.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--light-teal);font-family:var(--sans)}
+
+/* Ivory, so it reads as an aside rather than another step in the argument. */
+.prose .callout{margin:1.8em 0;padding:18px 20px;background:var(--ivory);
+  border:1px solid var(--fog);border-radius:13px;font-size:16.5px;
+  line-height:1.6}
+.prose .callout > *:first-child{margin-top:0}
+/* the label already carries the gap; the prose rule would double it */
+.prose .callout .ctitle + p{margin-top:0}
+.prose .callout .ctitle{display:block;margin-bottom:6px;font-size:12.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--light-teal)}
+
+/* The figure a paragraph is about, pulled out so it can be found again on a
+   second read. Said once here and not repeated in the body. */
+.prose .keynum{margin:1.8em 0;padding:18px 20px;border:1px solid var(--line);
+  border-left:4px solid var(--palo-alto);border-radius:0 13px 13px 0}
+.prose .keynum .kfig{display:block;font-family:var(--serif);font-weight:900;
+  font-size:38px;line-height:1;color:var(--navy);
+  font-variant-numeric:tabular-nums}
+.prose .keynum .klabel{display:block;margin-top:7px;font-size:15.5px;
+  color:var(--muted)}
+
+/* The chart keeps its own type, colour and hover inside the <svg>, not here,
+   because clean() skips anything inside one. That is what lets an interactive
+   figure sit in an editable region and survive Copy HTML intact. Only the
+   outer frame is styled from this file. */
+.prose .simfig{margin:1.9em 0}
+.prose .simchart{display:block;width:100%;height:auto}
+.prose .simfig figcaption{margin-top:11px;font-size:15.5px;line-height:1.55;
+  color:var(--soft)}
+
+/* Accordion for the derivations. <details> needs no JS, and editor.js only
+   walks [data-edit] regions, so it is safe inside the article body. */
+.prose details.math{margin:1.5em 0;border:1px solid var(--line);
+  border-radius:13px;background:#fff;overflow:hidden}
+.prose details.math summary{list-style:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:15px 18px;font-size:15.5px;font-weight:700;color:var(--light-teal)}
+.prose details.math summary::-webkit-details-marker{display:none}
+.prose details.math summary:hover{background:var(--mist)}
+.prose details.math summary::after{content:"";flex:0 0 auto;width:9px;height:9px;
+  margin-right:3px;border-right:2px solid currentColor;
+  border-bottom:2px solid currentColor;margin-bottom:4px;
+  /* translate after rotate gets rotated too, which skews the glyph. Rotate only. */
+  transform:rotate(45deg);transition:transform .15s ease}
+.prose details.math[open] summary{border-bottom:1px solid var(--line)}
+.prose details.math[open] summary::after{transform:rotate(-135deg);margin-bottom:0;margin-top:4px}
+.prose details.math .dbody{padding:16px 18px 18px}
+.prose details.math .dbody > *:first-child{margin-top:0}
+.prose details.math li{font-size:16.5px}
+
+/* The source PDF ships the two formulas as bitmaps. Rebuilt in HTML so they stay
+   sharp, sit on the site palette, and reflow on a phone. */
+.prose .formula{display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:center;gap:.28em;margin:0 0 1.1em;padding:20px 16px;
+  background:var(--mist);border:1px solid var(--line);border-radius:11px;
+  font-size:21px;line-height:1.15;color:var(--navy);
+  font-variant-numeric:tabular-nums}
+.prose .formula var{font-style:italic;font-weight:600}
+.prose .formula .op{margin:0 .12em}
+.prose .formula .par{font-size:2.2em;font-weight:200;line-height:.72;
+  transform:translateY(.03em)}
+/* Numerator and denominator MUST carry classes. clean() unwraps any classless
+   <span>, so a bare `.frac > span` structure is destroyed the first time the
+   page goes through Copy HTML and the fraction collapses into a stack. */
+.prose .frac{display:inline-flex;flex-direction:column;align-items:center}
+.prose .frac > .num,.prose .frac > .den{display:block;padding:.05em .42em;
+  text-align:center;white-space:nowrap}
+.prose .frac > .num{border-bottom:2px solid currentColor}
+
+/* keynum gains the same uppercase eyebrow the callout and defbox already use,
+   so a figure can carry its own label without rewording the sentence. */
+.prose .keynum .ctitle{display:block;margin-bottom:9px;font-size:12.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--light-teal)}
+
+/* second-level bullets. These were lower-alpha, which gave every sub-point a
+   lone "a." with no "b." under it and read as a formatting artifact. */
+.prose ul.sub{margin:.5em 0 0;padding-left:25px;list-style:disc}
+.prose ul.sub > li{margin-top:.3em}
+
+/* Tighten the figure-to-derivation pair. Both sides have to come down: adjacent
+   margins collapse to the larger, so dropping only one changes nothing. Scoped to
+   the pair so other keynums and accordions keep their normal rhythm. */
+.prose .keynum:has(+ details.math){margin-bottom:14px}
+.prose .keynum + details.math{margin-top:14px}
+
+/* On-page jump. Down chevron rather than the right arrow .seeall uses, because
+   this scrolls the reader rather than taking them elsewhere. html already sets
+   scroll-padding-top:72px, which clears the sticky header, so the target needs
+   nothing of its own. */
+.prose a.jump{display:block;position:relative;
+  margin:1.4em 0;padding:14px 46px 14px 18px;
+  background:#F2F7F5;border:1px solid var(--line);
+  border-left:4px solid var(--palo-alto);border-radius:0 13px 13px 0;
+  font-size:16.5px;font-weight:600;color:var(--dark-palo);
+  text-decoration:none}
+.prose a.jump:hover{background:#E7F0ED;border-color:var(--palo-alto);
+  border-left-color:var(--palo-alto)}
+.prose a.jump strong{color:inherit}
+.prose a.jump::after{content:"";position:absolute;right:20px;top:50%;
+  width:9px;height:9px;margin-top:-7px;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg)}
+/* a bracketed power is one unit. Left as loose children of .formula it becomes
+   several flex items and picks up the 0.28em gap between every piece. */
+.prose .formula .grp{white-space:nowrap}
+
+.prose .result{font-size:19.5px}
+.prose .result strong{color:var(--navy)}
+
+.prose table{width:100%;margin:1.6em 0;border-collapse:collapse;font-size:16px}
+.prose th,.prose td{padding:10px 12px;text-align:left;
+  border-bottom:1px solid var(--line)}
+.prose th{font-size:12.5px;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--light-teal)}
+.prose td:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tscroll{overflow-x:auto}
+
+/* ---------------------------------------------------------------- calculator
+   Lives outside every data-edit region, so none of this has to survive the
+   exporter. Inputs are 16px minimum or iOS Safari zooms on focus. */
+/* 68ch resolves against THIS element's font-size, and .calc was inheriting the
+   17px body size while .prose runs at 18/18.5px. That made the calculator 50px
+   narrower than the article column it sits in. Match the prose size so the two
+   measures resolve identically; every child here sets its own size, so this
+   changes the width and nothing else. */
+.calc{max-width:68ch;font-size:18px;margin:34px 0 10px;padding:24px 22px 22px;
+  background:var(--mist);border:1px solid var(--line);border-radius:14px}
+.calc h2{margin:0;font-family:var(--serif);font-weight:900;font-size:24px;
+  line-height:1.2;color:var(--navy)}
+.clede{margin:8px 0 0;font-size:15.5px;line-height:1.5;color:var(--soft)}
+
+.ctabs{display:flex;gap:8px;margin:18px 0 0}
+.ctab{flex:1 1 0;min-width:0;padding:11px 10px;font:600 15.5px/1.2 var(--sans);
+  color:var(--light-teal);background:#fff;border:1px solid var(--line);
+  border-radius:10px;cursor:pointer}
+.ctab:hover{border-color:var(--palo-alto)}
+.ctab.on{background:var(--palo-alto);border-color:var(--palo-alto);color:#fff}
+
+.cpanel{margin-top:18px}
+.cstep{margin:0 0 4px;font-size:12.5px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--light-teal)}
+.ccarry{margin:10px 0 0;font-size:15.5px;color:var(--muted)}
+.ccarry strong{color:var(--navy);font-variant-numeric:tabular-nums}
+
+.cfield{margin-top:16px}
+.cfield label{display:block;font-size:16px;font-weight:600;color:var(--ink)}
+.cin{display:flex;align-items:center;gap:0;margin-top:6px;background:#fff;
+  border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.cin:focus-within{border-color:var(--palo-alto);
+  box-shadow:0 0 0 3px rgba(27,109,95,.14)}
+.cpre,.csuf{flex:0 0 auto;padding:0 12px;font-size:16px;color:var(--soft)}
+.cin input,.cin select{flex:1 1 auto;min-width:0;width:100%;
+  /* 16px floor: anything smaller makes iOS Safari zoom on focus */
+  padding:11px 12px;font:16px/1.3 var(--sans);color:var(--ink);
+  background:transparent;border:0;outline:none;font-variant-numeric:tabular-nums}
+.cin .cpre + input{padding-left:0}
+.cin select{cursor:pointer;padding-right:12px}
+.chint{margin:6px 0 0;font-size:14.5px;line-height:1.45;color:var(--soft)}
+.chint strong{color:var(--muted)}
+
+.cout{margin-top:20px;padding:18px 20px;background:var(--navy);
+  border-radius:12px;color:#fff}
+.colab{display:block;font-size:12.5px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--sand)}
+.cofig{display:block;margin-top:6px;font-family:var(--serif);font-weight:900;
+  font-size:38px;line-height:1.05;font-variant-numeric:tabular-nums}
+.conote{display:block;margin-top:8px;font-size:15px;line-height:1.5;
+  color:rgba(255,255,255,.82)}
+/* .conote sets display:block, which beats the UA's [hidden] rule, so collapse
+   it on :empty instead or an empty note leaves an 8px gap under the figure. */
+.conote:empty{display:none}
+
+/* the spending-estimate box inside the article, between two prose regions.
+   Same measure rule as .calc: 68ch against the prose font-size. */
+.estimate{max-width:68ch;font-size:18px;margin:14px 0 34px;padding:18px 20px 18px;
+  background:var(--mist);border:1px solid var(--line);border-radius:12px}
+/* the block above (Jasmine's callout) carries a 1.8em bottom margin that would
+   collapse with ours and win, so zero it when the estimate box follows */
+.prose:has(+ .estimate) > :last-child{margin-bottom:0}
+.estimate .cfield{margin-top:6px}
+.enote{margin:12px 0 0;font-size:15.5px;line-height:1.5;color:var(--muted)}
+.enote a{color:var(--light-teal);font-weight:600;text-underline-offset:2px}
+.enote a:hover{color:var(--dark-palo)}
+
+/* v3 "Now you" panel: the article's single interactive block. Same measure
+   rule as .calc and .estimate. */
+.nowyou{max-width:68ch;font-size:18px;margin:30px 0 34px;padding:20px 22px 20px;
+  background:var(--mist);border:1px solid var(--line);border-radius:14px}
+.nowyou .cstep{margin-bottom:0}
+.nowyou .nyintro{margin:6px 0 0;font-size:15.5px;line-height:1.5;color:var(--muted)}
+.prose details.math .mstep{margin:16px 0 0;font-weight:600;font-size:16.5px}
+.prose details.math ol.msteps{margin:.6em 0 0;padding-left:24px;list-style:decimal}
+.prose details.math ol.msteps li{font-size:16.5px;font-variant-numeric:tabular-nums}
+.prose .keynum .klabel + .klabel{margin-top:10px}
+.nowyou .nyh{margin:2px 0 0;font-family:var(--serif);font-weight:900;font-size:22px;
+  line-height:1.2;color:var(--navy)}
+.nowyou .cout{margin-top:18px}
+.nowyou .prose details.math{margin:14px 0 0;background:#fff}
+.nowyou .enote{margin-top:14px}
+
+/* v5: the middle copy of the calculator sits inside the article, so it
+   needs the article's spacing below it, not the 10px the end-of-page one uses */
+.calc.calc-a{margin-bottom:34px}
+/* the closing prose after the end-of-page calculator needs room above it */
+.calc + .prose{margin-top:34px}
+
+.creset{margin-top:16px;padding:9px 16px;font:600 15px/1 var(--sans);
+  color:var(--muted);background:#fff;border:1px solid var(--line);
+  border-radius:999px;cursor:pointer}
+.creset:hover{border-color:var(--driftwood);color:var(--ink)}
+
+/* figures inside the calculator */
+.cfig{margin:22px 0 0}
+.clegend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;
+  font-size:14px;color:var(--muted)}
+.ckey{display:inline-block;width:12px;height:12px;border-radius:3px;
+  margin-right:-9px;vertical-align:-1px}
+.ckey.k1{background:#A9761F}
+.ckey.k2{background:#9B2743}
+.ckey.kyou{width:16px;height:0;border-top:2px dashed #9B2743;border-radius:0}
+.cwrap{position:relative}
+.cchart{display:block;width:100%;height:auto;margin-top:8px;background:#fff;
+  border:1px solid var(--line);border-radius:11px}
+/* hover readout. An HTML box rather than SVG text, so the type stays crisp and
+   at a fixed size instead of scaling with the viewBox. */
+.ctip{position:absolute;top:16px;left:0;z-index:2;pointer-events:none;
+  min-width:148px;padding:9px 11px;background:#fff;
+  border:1px solid var(--line);border-radius:9px;
+  box-shadow:0 5px 16px rgba(13,59,79,.13);font-size:13.5px;line-height:1.35}
+.ttt{display:block;margin-bottom:5px;font-weight:700;color:var(--navy)}
+.ttr{display:flex;align-items:center;gap:8px;margin-top:3px}
+.ttk{flex:0 0 auto;width:9px;height:9px;border-radius:2px}
+.ttl{flex:1 1 auto;color:var(--muted);white-space:nowrap}
+.ttv{font-weight:700;color:var(--ink);white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.cchart .cax{font:12.5px var(--sans);fill:var(--soft)}
+.cchart .cyou{fill:#9B2743;font-weight:600}
+.ccap{margin:9px 0 0;font-size:14.5px;line-height:1.5;color:var(--soft)}
+.ccap strong{color:var(--muted)}
+
+/* the shortfall panel */
+.shortfall{margin-top:18px}
+.sfrow{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  margin-top:20px}
+.sflab{font-size:12.5px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--light-teal)}
+.sfval{min-width:74px;padding:7px 12px;text-align:right;background:#fff;
+  border:1px solid var(--line);border-radius:8px;
+  font:600 15.5px/1 var(--sans);color:var(--ink);
+  font-variant-numeric:tabular-nums}
+.sfrange{-webkit-appearance:none;appearance:none;width:100%;margin:14px 0 0;
+  height:4px;border-radius:3px;background:var(--fog);cursor:pointer}
+.sfrange::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+  width:22px;height:22px;border-radius:50%;background:#fff;
+  border:3px solid var(--palo-alto);cursor:pointer}
+.sfrange::-moz-range-thumb{width:16px;height:16px;border-radius:50%;
+  background:#fff;border:3px solid var(--palo-alto);cursor:pointer}
+.sfrange:focus-visible{outline:3px solid rgba(27,109,95,.3);outline-offset:4px}
+
+.sfstats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px;
+  padding-top:18px;border-top:1px solid var(--line)}
+.sfstat{min-width:0}
+.sfk{display:block;font-size:12px;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--soft)}
+.sfv{display:block;margin-top:3px;font-family:var(--serif);font-weight:900;
+  line-height:1.1;font-variant-numeric:tabular-nums;font-size:22px}
+.vplan{color:#A9761F} .vact{color:#9B2743} .vinc{color:var(--navy);font-size:27px}
+.sfnote{margin:16px 0 0;font-size:16px;line-height:1.55;color:var(--ink)}
+
+@media (max-width:560px){
+  .calc{padding:20px 16px 18px}
+  .ctabs{flex-direction:column}
+  .cofig{font-size:32px}
+  .sfstats{gap:14px 20px}
+  .sfv{font-size:19px} .vinc{font-size:22px}
+  .cchart .cax{font-size:15.5px}
+}
+
+.contents{max-width:68ch;margin:26px 0 6px;padding:16px 20px;
+  background:var(--mist);border:1px solid var(--line);border-radius:13px}
+.contents .ctitle{font-size:12.5px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--light-teal)}
+.contents ol{margin-top:10px;padding-left:19px;list-style:decimal}
+.contents li{margin-top:5px;font-size:15.5px}
+.contents li::marker{color:var(--soft);font-size:13px}
+.contents a{color:var(--navy);text-decoration:none;
+  text-underline-offset:2px}
+.contents a:hover{text-decoration:underline;color:var(--dark-palo)}
+
+@media (min-width:800px){
+  .arthead h1{font-size:40px}
+  .prose,.calc,.estimate,.nowyou{font-size:18.5px}
+  .prose .defbox p{font-size:22px}
+  .ticon{width:52px;height:52px}
+  .ticon svg{width:28px;height:28px}
+  .prose h2{font-size:29px}
+  .prose h3{font-size:21px}
+  .prose blockquote{font-size:24px;padding-left:24px}
+  .artmain{padding-top:40px}
+}
+
+/* ========================================================= edit mode (UI)
+   Off unless #edit is on the URL, so a shared link looks like the site. */
+.earea{outline:2px dashed rgba(0,111,122,.45);outline-offset:7px;
+  border-radius:3px}
+.earea:focus{outline:2px dashed var(--light-teal)}
+body.editing{padding-bottom:132px}
+
+.ebar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--navy);
+  color:#fff;border-top:3px solid var(--palo-alto);padding:10px 14px;
+  box-shadow:0 -6px 24px rgba(13,59,79,.22)}
+.ebar .ein{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;
+  gap:7px;align-items:center}
+.ebar button{font:600 13.5px/1 var(--sans);color:#fff;background:transparent;
+  border:1px solid rgba(255,255,255,.34);border-radius:8px;padding:8px 11px;
+  cursor:pointer;transition:.1s;white-space:nowrap}
+.ebar button:hover{background:rgba(255,255,255,.13);border-color:var(--sand)}
+.ebar button.prim{background:var(--sand);border-color:var(--sand);
+  color:var(--navy);font-weight:700}
+.ebar button.prim:hover{background:#E2CFAC}
+.ebar .esep{width:1px;height:22px;background:rgba(255,255,255,.22);margin:0 3px}
+.ebar .egroup{font-size:11px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--sand);margin-right:2px}
+.ebar .ecount{font-size:12.5px;font-weight:700;color:var(--navy);
+  background:#E9BF69;border-radius:999px;padding:5px 11px;white-space:nowrap}
+.ehint{max-width:1080px;margin:8px auto 0;font-size:12.5px;color:#CBD9DE}
+.ehint b{color:var(--sand);font-weight:700}
+
+.eout{position:fixed;inset:0;z-index:70;background:rgba(13,59,79,.55);
+  display:flex;align-items:center;justify-content:center;padding:20px}
+.eout .ecard{background:#fff;border-radius:14px;width:min(760px,100%);
+  max-height:82vh;display:flex;flex-direction:column;overflow:hidden}
+.eout h2{padding:17px 20px 0;font-family:var(--serif);font-size:22px;
+  color:var(--navy)}
+.eout p{padding:7px 20px 0;font-size:14.5px;color:var(--muted)}
+.eout textarea{flex:1;min-height:260px;margin:14px 20px;padding:13px;
+  font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);
+  border:1px solid var(--line);border-radius:9px;resize:vertical;
+  background:var(--mist)}
+.eout .erow{display:flex;gap:9px;justify-content:flex-end;padding:0 20px 18px}
+.eout .erow button{font:600 14px/1 var(--sans);padding:10px 15px;
+  border-radius:9px;cursor:pointer;border:1px solid var(--line);
+  background:#fff;color:var(--navy)}
+.eout .erow button.prim{background:var(--navy);border-color:var(--navy);
+  color:#fff}
+
+@media print{.ebar,.eout{display:none !important}
+  .earea{outline:0 !important}}
+
+/* "Core financial concepts this page builds on": a tinted navy box so it reads
+   as a pointer out of the lesson, not more of the lesson. */
+.prose .concepts{margin-top:1.6em;padding:20px 22px;background:#EAF1F5;
+  border:1px solid #C9DAE2;border-radius:13px}
+.prose .concepts:first-child{margin-top:0}
+.prose .concepts h3{margin-top:0;font-size:19px;color:var(--navy)}
+.prose .concepts ul{margin-top:.6em}
+.prose .concepts li + li{margin-top:.3em}
+
+/* GitHub share copy: links to pages not built yet keep their link styling
+   but have no href, so they show where a link will go without dead-ending */
+.prose a.soon,a.nextup.soon{cursor:help}
+
+/* ------------------------------------------------- two-step map (v6)
+   Two lines, each led by a teal "Step N" pill. Each line jumps to its h2. */
+.arthead h3{margin-top:16px;font-size:19px;font-weight:600;letter-spacing:0;color:var(--muted)}
+.arthead > p:not(.lede){margin-top:14px;font-size:18px;line-height:1.6;color:var(--ink)}
+@media(min-width:800px){.arthead > p:not(.lede){font-size:18.5px}}
+.steps{max-width:68ch;margin:20px 0 40px}
+.stlist{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.stitem{display:flex;align-items:baseline;gap:12px;text-decoration:none;color:inherit}
+.stpill{flex:0 0 auto;display:inline-block;padding:4px 11px 5px;border-radius:999px;
+  background:var(--light-teal);color:#fff;font:700 14.5px/1.2 var(--sans);letter-spacing:.02em;
+  white-space:nowrap;position:relative;top:-1px}
+.sttext{display:block}
+.stq{display:inline;font-family:var(--sans);font-weight:400;font-size:18px;line-height:1.45;
+  color:var(--ink)}
+.stq::after{content:'\00a0\2193';color:var(--light-teal);font-size:17px}
+.stitem:hover .stq,.stitem:focus-visible .stq{text-decoration:underline;text-underline-offset:3px;
+  text-decoration-color:rgba(0,111,122,.5)}
+
+/* ------------------------------------------- sticky step tracker (v6) */
+.stbar{position:fixed;left:0;right:0;top:60px;z-index:29;
+  background:#fff;border-bottom:1px solid var(--line);
+  box-shadow:0 6px 14px -10px rgba(13,59,79,.35);
+  transform:translateY(-110%);opacity:0;visibility:hidden;
+  transition:transform .22s ease,opacity .22s ease,visibility 0s linear .22s}
+.stbar.on{transform:none;opacity:1;visibility:visible;
+  transition:transform .22s ease,opacity .22s ease,visibility 0s}
+@media (prefers-reduced-motion:reduce){.stbar,.stbar.on{transition:none}}
+.stbar-in{max-width:700px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:10px}
+.sbstep{display:flex;align-items:center;gap:9px;min-width:0;text-decoration:none;color:var(--soft)}
+.sbpill{flex:0 0 auto;padding:3px 10px 4px;border-radius:999px;border:1.5px solid #C8CFCD;
+  color:var(--soft);background:#fff;font:700 13.5px/1.2 var(--sans);white-space:nowrap}
+.sbstep.cur .sbpill{border-color:var(--light-teal);background:var(--light-teal);color:#fff}
+.sbstep:hover .sbname{text-decoration:underline;text-underline-offset:3px}
+.sbname{font-size:15px;font-weight:600;line-height:1.25;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis}
+.sbline{flex:0 0 22px;height:2px;
+  background:repeating-linear-gradient(90deg,#79A290 0 4px,transparent 4px 8px)}
+.sbstep.cur{color:var(--navy)}
+.sbstep.cur .sbstep.cur .sbname{font-weight:700}
+/* On a phone only the current step keeps its name; the other is just its circle. */
+@media (max-width:620px){
+  .sbstep:not(.cur) .sbname{display:none}
+  .sbstep.cur .sbname{white-space:normal;font-size:14.5px}
+}
+
+/* -------------------------------------------- minus / plus buttons (v6) */
+.cbump{flex:0 0 46px;align-self:stretch;min-height:46px;border:0;border-left:1px solid var(--line);
+  background:var(--mist);color:var(--light-teal);font:700 22px/1 var(--sans);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.cbump:hover{background:#E6F0EF}
+.cbump:active{background:#D3E6E3}
+.cbump:focus-visible{outline:2.5px solid var(--navy);outline-offset:-3px;border-radius:0}
+
+/* ---------------------------------------- step charts + what-if (v6)
+   Step One: one series, the balance drawn down. Step Two: a two-step
+   sequential stack, what you put in (light) under growth (dark), which is
+   composition rather than identity. Colours from the credit-card chart. */
+.yfig{margin:18px 0 0;padding:16px 14px 12px;background:#fff;border:1px solid var(--line);
+  border-radius:12px}
+.ychart{display:block;width:100%;height:auto;overflow:visible}
+.ychart .yg{stroke:#E6EAEA;stroke-width:1}
+.ychart .yb{stroke:#9AA6AB;stroke-width:1.2}
+.ychart .yt{font:600 13px var(--sans);fill:#5D6A72}
+.ychart .yend{fill:var(--navy);font-weight:700}
+.ychart .yax{font:600 13px var(--sans);fill:#5D6A72}
+.ychart .ya1{fill:#8FBDD6;fill-opacity:.55}
+.ychart .yl1{fill:none;stroke:#00618C;stroke-width:3;stroke-linejoin:round}
+.ychart .yd1,.ychart .yd2{fill:#00618C;stroke:#fff;stroke-width:2.5}
+.ychart .ya2{fill:#00618C}
+.ychart .ya3{fill:#8FBDD6}
+.ychart .yl2{fill:none;stroke:#00618C;stroke-width:2;stroke-linejoin:round}
+.ychart.nar .yt{font-size:24px}
+.yaxis{margin:2px 0 0;text-align:center;font-size:13.5px;font-weight:600;color:var(--soft)}
+@media (max-width:560px){.yfig{padding:12px 10px 10px}}
+.yfig figcaption{margin-top:8px;font-size:15px;line-height:1.45;color:var(--muted)}
+.yfig figcaption b{color:var(--navy)}
+.ylegend{display:flex;flex-wrap:wrap;gap:4px 18px;margin:0 0 10px;font-size:15px;color:var(--muted)}
+.ylegend b{color:var(--ink);font-variant-numeric:tabular-nums}
+.ylegend .sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:7px;
+  vertical-align:-1px}
+.ylegend .sw1{background:#8FBDD6}
+.ylegend .sw2{background:#00618C}
+
+.cwhatif{margin-top:18px}
+.cwlab{margin:0 0 8px;font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--light-teal)}
+.cwrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.cwchip{display:flex;flex-direction:column;gap:3px;text-align:left;padding:10px 12px;
+  border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;
+  font:inherit;color:var(--ink);-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.cwchip:hover{border-color:var(--light-teal);background:#F4F9F8}
+.cwchip:focus-visible{outline:2.5px solid var(--navy);outline-offset:2px}
+.cwt{font-size:15px;font-weight:600;line-height:1.3}
+.cwd{font-size:14.5px;font-weight:700;color:var(--light-teal);font-variant-numeric:tabular-nums}
+/* phone: one chip per row, effect on the right, so three chips stay short */
+@media (max-width:560px){
+  .cwrow{grid-template-columns:1fr;gap:6px}
+  .cwchip{flex-direction:row;align-items:center;justify-content:space-between;gap:12px;padding:9px 12px}
+  .cwt{font-size:14.5px}
+  .cwd{font-size:14px;text-align:right;flex:0 0 auto;max-width:48%}
+}
+
+/* -------------------------------------- v6 calculator tabs and result */
+.calc.v6 .ctabs{flex-direction:row}
+.calc.v6 .ctab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;
+  padding:10px 12px 11px;text-align:left}
+.calc.v6 .ctn{font:700 12.5px/1.2 var(--sans);letter-spacing:.09em;text-transform:uppercase}
+.calc.v6 .ctd{font:600 15px/1.3 var(--sans)}
+.calc.v6 .ctab:not(.on) .ctn{color:var(--soft)}
+.calc.v6 .ctab:not(.on) .ctd{color:var(--ink)}
+.calc.v6 .cout{padding:14px 18px 15px}
+.calc.v6 .cofig{margin-top:4px}
+.calc.v6 .cwrow{display:flex;flex-wrap:wrap;gap:8px}
+.calc.v6 .cwchip{display:inline-flex;flex-direction:row;align-items:center;width:auto;
+  padding:8px 15px;border-radius:999px;border-color:#BFD6D4}
+.calc.v6 .cwt{font-size:15px;font-weight:600;color:var(--light-teal);white-space:nowrap}
+@media (max-width:560px){
+  .calc.v6 .ctd{font-size:14px}
+  .calc.v6 .cwt{font-size:14.5px}
+}
+
+/* v6: the step label in the section headings, small teal capitals on their
+   own line in the same teal as the step pills, so only the question is set
+   large. It is a classed span, so it survives Copy HTML. */
+.prose h2 .stepk{display:block;margin-bottom:7px;font:700 17px/1.2 var(--sans);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--light-teal)}
+
+/* ===================================================== v7 compact calculator
+   Layout only; colours and type are the existing ones. Label left, stepper
+   right, one ruled row per input. The result figure and its chart share one
+   card. Wide screens put inputs and the card side by side. */
+
+/* step tabs: one grey track, the current step filled, each showing its result */
+.calc.v6 .ctabs{gap:4px;padding:5px;background:#E6ECEA;border-radius:14px}
+.calc.v6 .ctab{gap:2px;padding:10px 14px 11px;background:transparent;border:0;border-radius:10px}
+.calc.v6 .ctab:hover:not(.on){background:rgba(255,255,255,.6)}
+.calc.v6 .ctab.on{background:var(--palo-alto)}
+.calc.v6 .ctab.on .ctn{color:rgba(255,255,255,.85)}
+.calc.v6 .ctd{font:600 16px/1.25 var(--sans)}
+.calc.v6 .ctv{font:900 20px/1.15 var(--serif);font-variant-numeric:tabular-nums;color:var(--palo-alto)}
+.calc.v6 .ctab.on .ctv{color:#fff}
+
+/* input rows */
+.calc.v6 .cpanel{margin-top:10px;container-type:inline-size}
+.calc.v6 .cfield,.calc.v6 .ccarry{display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin:0;padding:10px 0;border-bottom:1px solid var(--line)}
+.calc.v6 .cfield label{margin:0;font-size:16.5px}
+.calc.v6 .ccarry{padding:12px 0;font-size:16px;color:var(--soft)}
+.calc.v6 .ccarry strong{font-size:16.5px}
+
+/* stepper: minus, the value, plus */
+.calc.v6 .cin{flex:0 0 190px;margin:0}
+.calc.v6 .cbump{flex:0 0 44px;min-height:44px;border:0}
+.calc.v6 .cbump:first-child{border-right:1px solid var(--line)}
+.calc.v6 .cbump:last-child{border-left:1px solid var(--line)}
+.calc.v6 .cval{flex:1 1 auto;min-width:0;display:flex;align-items:center;justify-content:center;gap:4px}
+.calc.v6 .cval input{flex:0 0 auto;width:4ch;max-width:100%;padding:10px 0;text-align:center;
+  font-weight:700;font-size:17px}
+.calc.v6 .cval .cpre,.calc.v6 .cval .csuf{padding:0;font-size:15px}
+.calc.v6 .chint{margin:10px 0 0;font-size:15px}
+
+/* the result: figure and chart in one card */
+.calc.v6 .cres{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.calc.v6 .cres .cout{margin:0;padding:14px 18px 15px;border-radius:0}
+.calc.v6 .cres .yfig{margin:0;padding:12px 14px 12px;border:0;border-radius:0}
+.calc.v6 .cres .yaxis{display:none}
+
+/* try row: label, chips, reset, all on one line where it fits */
+.calc.v6 .cwhatif{margin-top:14px}
+.calc.v6 .cwrow{align-items:center}
+.calc.v6 .cwlab{margin:0 4px 0 0}
+.calc.v6 .cwreset .cwt{color:var(--muted)}
+.calc.v6 > .creset{display:none}
+
+/* side by side when the panel has the room */
+@container (min-width:720px){
+  .calc.v6 .cgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+  .calc.v6 .cres{margin-top:10px}
+}
+@media (max-width:560px){
+  .calc.v6 .ctab{padding:9px 11px 10px}
+  .calc.v6 .ctd{font-size:14.5px}
+  .calc.v6 .ctv{font-size:18px}
+  .calc.v6 .cfield label{font-size:15.5px}
+  .calc.v6 .cin{flex-basis:150px}
+  .calc.v6 .cbump{flex-basis:38px}
+  .calc.v6 .cwchip{padding:7px 13px}
+}
+
+/* v7b: no grey box. The calculator sits on the page background like the
+   rest of the article, set off by a rule above and below instead. */
+.calc.v6{background:transparent;border:0;border-radius:0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:26px 0 24px}
+.calc.v6 .ctabs{background:#fff;border:1px solid var(--line)}
+.calc.v6 .ctab:hover:not(.on){background:var(--mist)}
+@media (max-width:560px){ .calc.v6{padding:22px 0 20px} }
+
+/* v7: "In future dollars", collapsed under the Step Two chart */
+.cfut{margin:12px 0 0;padding-top:10px;border-top:1px solid var(--line)}
+.cfut summary{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  list-style:none;cursor:pointer;padding:4px 0;font:600 15.5px/1.3 var(--sans);color:var(--light-teal)}
+.cfut summary::-webkit-details-marker{display:none}
+.cfut summary::after{content:"";flex:0 0 auto;width:8px;height:8px;margin:0 4px 4px 0;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg)}
+.cfut[open] summary::after{transform:rotate(-135deg);margin:4px 4px 0 0}
+.cfut summary:hover{color:var(--dark-palo)}
+.cfut summary:focus-visible{outline:2.5px solid var(--navy);outline-offset:2px;border-radius:4px}
+.cfut p{margin:8px 0 0;font-size:15px;line-height:1.5;color:var(--muted)}
+.cfut p b{color:var(--navy);font-variant-numeric:tabular-nums}
+.cfut table{width:100%;margin:10px 0 0;border-collapse:collapse;font-size:15px;
+  font-variant-numeric:tabular-nums}
+.cfut th,.cfut td{padding:6px 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400;color:var(--ink)}
+.cfut thead th{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
+.cfut td,.cfut thead th:last-child{text-align:right}
+.cfut tbody td{font-weight:600}
+
+/* v7: brief note when a typed value is corrected to its limit */
+.calc.v6 .cfield{flex-wrap:wrap}
+.calc.v6 .cclamp{flex:1 0 100%;margin-top:-2px;text-align:right;font-size:13.5px;
+  font-weight:600;color:var(--light-teal)}
+.calc.v6 .cclamp:empty{display:none}
+
+
+/* ======================================================= v8 "Vercel look"
+   This lesson only (<body class="vlook">); the landing page and other pages
+   keep the site styling. Matches the Vercel version: one navy for text and
+   headings, forest green accents, Source Serif 4 at 700 with optical sizing
+   (loaded from Google Fonts on this page), larger and looser headings. */
+body.vlook{
+  --navy:#0c3441; --dark-palo:#0c3441; --ink:#0c3441;
+  --light-teal:#14614f; --palo-alto:#14614f;
+  --muted:color-mix(in srgb,#0c3441 68%,#fff);
+  --soft:color-mix(in srgb,#0c3441 62%,#fff);
+  --line:color-mix(in srgb,#0c3441 12%,#fff);
+  --mist:#eef2f1;
+  line-height:1.6}
+body.vlook :is(.name,h1,.prose h2,.prose h3,.prose blockquote,.prose .defbox p,
+  .prose .keynum .kfig,.calc h2,.cofig,.nowyou .nyh,.sfv,.calc.v6 .ctv,.fbrand){
+  font-weight:700;font-optical-sizing:auto}
+body.vlook :is(h1,h2,h3){letter-spacing:0}
+body.vlook .arthead,body.vlook .prose,body.vlook .steps,body.vlook .calc{max-width:680px}
+body.vlook .arthead h1{font-size:clamp(32px,6vw,44px);line-height:1.18;
+  letter-spacing:-.01em;max-width:none}
+body.vlook .arthead .lede{font-size:18px;line-height:1.6;color:var(--ink)}
+body.vlook .prose{font-size:17px;line-height:1.6}
+body.vlook .prose h2{font-size:30px;line-height:1.18}
+body.vlook .prose h2 .stepk{margin-bottom:8px;font-size:12px;letter-spacing:.16em}
+body.vlook .prose h3{font-size:22px;line-height:1.18}
+body.vlook .prose a{text-decoration-color:color-mix(in srgb,#14614f 40%,transparent)}
+body.vlook .prose a:hover{color:#0c3441}
+body.vlook .stpill{padding:2px 10px;font-size:12px;letter-spacing:0}
+body.vlook .stq{font-size:17px}
+body.vlook .stitem:hover .stq{text-decoration-color:color-mix(in srgb,#14614f 50%,transparent)}
+body.vlook .calc h2{font-size:24px}
+
+
+/* ===================================================== v9 journey diagram
+   The step map at the top of the lesson, ported from the Vercel version.
+   Saving (green) rises to the peak, spending (navy) falls from it. On
+   phones the labels move into a numbered list under the diagram and the
+   badges mark the peak (1) and where "work back" lands (2). */
+.jy{max-width:680px;margin:22px 0 40px;display:flex;flex-direction:column;gap:2px}
+.jy-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.jy-plot{position:relative}
+.jy-plot svg{display:block;width:100%;height:auto;overflow:visible}
+.jy-up,.jy-down{fill:none;stroke-width:2.5;stroke-linecap:round}
+.jy-up{stroke:#14614f}
+.jy-down{stroke:#0c3441}
+.jy-aup{fill:color-mix(in srgb,#14614f 11%,#fff)}
+.jy-adown{fill:color-mix(in srgb,#0c3441 7%,#fff)}
+.jy-retire{stroke:color-mix(in srgb,#0c3441 55%,#fff);stroke-width:1.25;stroke-dasharray:3 4}
+.jy-base{stroke:color-mix(in srgb,#0c3441 12%,#fff);stroke-width:1.5}
+.jy-back{fill:none;stroke:#0c3441;stroke-width:1.5;stroke-dasharray:5 4}
+.jy-ann{position:absolute;display:flex;flex-direction:column;gap:2px;padding:6px 8px;
+  border-radius:10px;color:#0c3441;text-decoration:none;transition:background .15s}
+.jy-ann:hover{background:color-mix(in srgb,#14614f 9%,#fff)}
+.jy-ann:hover .jy-t{text-decoration:underline;text-underline-offset:3px}
+.jy-row{display:flex;align-items:center;gap:8px}
+.jy .stpill{top:0;padding:2px 10px;font-size:12px;line-height:1.5}
+.jy-t{font-weight:700;font-size:16px;line-height:1.3;white-space:nowrap}
+.jy-s{font-size:14px;line-height:1.35;color:color-mix(in srgb,#0c3441 68%,#fff);white-space:nowrap}
+.jy-ann1{left:58.82%;bottom:68.2%;transform:translateX(-50%);align-items:center;text-align:center}
+.jy-ann2{left:0;bottom:34.6%}
+.jy-backlab{position:absolute;left:38%;top:35.5%;font-size:13px;font-weight:600;color:#0c3441;white-space:nowrap}
+.jy-badge{position:absolute;display:none;align-items:center;justify-content:center;width:24px;height:24px;
+  border-radius:999px;border:2px solid #fff;background:#14614f;color:#fff;font-size:13px;font-weight:700;
+  transform:translate(-50%,-50%)}
+.jy-b1{left:58.82%;top:23.5%}
+.jy-b2{left:36.2%;top:54.3%}
+.jy-phases{display:flex;font-size:14px;font-weight:600;line-height:1.4}
+.jy-phases span:first-child{flex:0 0 52.94%;margin-left:5.88%;text-align:center;color:#14614f}
+.jy-phases span:last-child{flex:0 0 35.29%;text-align:center;color:#0c3441}
+.jy-list{display:none;flex-direction:column;gap:12px;margin:14px 0 0;padding:0;list-style:none}
+.jy-list a{display:flex;align-items:flex-start;gap:12px;color:#0c3441;text-decoration:none}
+.jy-list .jy-t,.jy-list .jy-s{display:block;white-space:normal}
+.jy-list .jy-s{font-size:15px}
+.jy-n{flex:none;display:flex;align-items:center;justify-content:center;width:24px;height:24px;margin-top:1px;
+  border-radius:999px;background:#14614f;color:#fff;font-size:13px;font-weight:700}
+@media (max-width:560px){
+  .jy-ann,.jy-backlab{display:none}
+  .jy-badge{display:flex}
+  .jy-list{display:flex}
+  .jy-phases{font-size:13px}
+}
+.jy-draw{stroke-dasharray:1;stroke-dashoffset:1;animation:jy-draw 1.1s ease-out forwards}
+.jy-draw2{animation-delay:.9s;animation-duration:.9s}
+.jy-fade{opacity:0;animation:jy-fade .5s ease-out forwards}
+.jy-d1{animation-delay:.9s}.jy-d2{animation-delay:1.5s}.jy-d3{animation-delay:1.9s}
+@keyframes jy-draw{to{stroke-dashoffset:0}}
+@keyframes jy-fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.jy-draw,.jy-fade{animation:none;opacity:1;stroke-dashoffset:0}}
+
+/* v9b: step label on the same line as the heading, same size (fewer
+   heading sizes on the page); green marks it as the step. The calculator
+   heading matches the h3 size so the page uses h1 / h2 / h3 only. */
+body.vlook .prose h2 .stepk{display:inline;margin:0;font:inherit;letter-spacing:0;
+  text-transform:none;color:var(--light-teal)}
+body.vlook .calc h2{font-size:22px}
+
+/* v10: a short clarifier under a calculator label (Other yearly income) */
+.calc.v6 .cfield label .csubl{display:block;margin-top:1px;font-size:13.5px;font-weight:400;
+  line-height:1.3;color:var(--muted)}
+
+/* ===== v11: calculator cards, matched to the Vercel version =====
+   Everything is scoped to .vc and prefixed vc-, so the older .calc rules
+   above (no longer used on this page) cannot reach it. */
+.vc{--ink:#0c3441;--g:#14614f;--mist:#eef2f1;--paper:#fff;--sky:#8fbdd4;
+  --muted:color-mix(in srgb,var(--ink) 68%,var(--paper));
+  --line:color-mix(in srgb,var(--ink) 12%,var(--paper));
+  --gsoft:color-mix(in srgb,var(--g) 9%,var(--paper));
+  --leaf:color-mix(in srgb,var(--g) 45%,var(--sky));
+  max-width:680px;margin:34px 0;font:17px/1.6 var(--sans);color:var(--ink)}
+.vc + .prose{margin-top:34px}
+.vc *{box-sizing:border-box}
+.vc p{margin:0}
+.vc a{color:var(--g);font-weight:600;text-underline-offset:3px}
+.vc .num{font-variant-numeric:tabular-nums}
+.vc button{font-family:var(--sans)}
+
+.vc-card{border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;background:var(--paper)}
+.vc-card [hidden]{display:none!important}
+.vc-recap{padding:22px 24px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.vc .vc-rhead{margin:0;font:700 22px/1.18 var(--serif);color:var(--ink);letter-spacing:0}
+.vc-eye{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--g)}
+.vc-top{padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.vc-big{font-family:var(--serif);font-weight:700;font-size:clamp(40px,9vw,56px);line-height:1.05;
+  font-variant-numeric:tabular-nums;color:var(--g)}
+.vc-big small{font-size:.45em;font-family:var(--sans);font-weight:600;color:var(--muted)}
+.vc-top p{font-size:16px;color:var(--muted)}
+.vc-top p b{color:var(--ink)}
+.vc-compare{background:var(--mist);border-top:1px solid var(--line);padding:20px 24px;display:flex;flex-direction:column;gap:8px}
+.vc-compare p{font-size:16px;color:var(--ink)}
+.vc-compare p b{color:var(--g)}
+.vc-sec{border-top:1px solid var(--line);padding:20px 24px;display:flex;flex-direction:column;gap:10px}
+.vc-scen{background:var(--mist)}
+
+/* rows */
+.vc-rows{display:flex;flex-direction:column;margin-top:6px}
+.vc-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.vc-row label,.vc-label{font-weight:600;font-size:16px;line-height:1.3}
+.vc-val{display:flex;align-items:baseline;gap:10px;font-size:16px}
+.vc-val a{font-size:14px}
+.vc-rows > :last-child{border-bottom:0;padding-bottom:0}
+.vc-clamp{margin:0;padding:4px 0 6px;font-size:13.5px;color:#9a3b12;border-bottom:1px solid var(--line)}
+
+/* minus / plus fields */
+.vc-step{display:flex;flex:none;align-items:center;gap:8px}
+.vc-step button{width:28px;height:28px;flex:none;display:flex;align-items:center;justify-content:center;padding:0;
+  border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--g);
+  font-size:16px;font-weight:700;line-height:1;cursor:pointer;transition:background .15s,border-color .15s}
+.vc-step button:hover{background:var(--gsoft);border-color:var(--g)}
+.vc-step button:focus-visible{outline:2px solid var(--g);outline-offset:2px}
+.vc-field{display:flex;align-items:baseline;justify-content:flex-end;gap:3px;width:96px;padding:2px 2px 3px;
+  border-bottom:2px solid var(--line);font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;transition:border-color .15s}
+.vc-field:hover{border-color:color-mix(in srgb,var(--g) 45%,var(--paper))}
+.vc-field:focus-within{border-color:var(--g)}
+.vc-field input{font:inherit;color:var(--ink);border:0;background:transparent;padding:0;margin:0;min-width:0;width:100%;
+  text-align:right;outline:none;box-shadow:none}
+.vc-unit{color:var(--muted);font-weight:500;font-size:14px;white-space:nowrap}
+
+/* employer accordion */
+.vc-acc summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 0;cursor:pointer;list-style:none}
+.vc-acc summary::-webkit-details-marker{display:none}
+.vc-acc summary .vc-val{align-items:center}
+.vc-acc summary svg{color:var(--g);transition:transform .2s}
+.vc-acc[open] summary svg{transform:rotate(180deg)}
+.vc-acc summary:focus-visible{outline:2px solid var(--g);outline-offset:4px;border-radius:4px}
+.vc-accb{display:flex;flex-direction:column;padding-top:12px}
+.vc-accb .vc-chips{padding-bottom:6px}
+.vc-accb .vc-row:last-child{border-bottom:0}
+.vc-accb .vc-row label{font-weight:500}
+
+/* chips and presets */
+.vc-chips{display:flex;flex-wrap:wrap;gap:8px}
+.vc-chip{font-size:14px;font-weight:600;line-height:1.5;color:var(--g);background:var(--paper);
+  border:1px solid color-mix(in srgb,var(--g) 30%,var(--paper));border-radius:999px;padding:5px 12px;cursor:pointer;transition:background .15s,color .15s}
+.vc-chip:hover{background:var(--gsoft)}
+.vc-chip[aria-pressed="true"]{background:var(--g);color:var(--paper);border-color:var(--g)}
+.vc-presets{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:14px;row-gap:4px;font-size:13px}
+.vc-accp{padding:12px 0 14px;border-bottom:1px solid var(--line)}
+.vc-plabel{color:var(--muted)}
+.vc-preset{font-size:13px;color:var(--g);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;
+  text-decoration-color:color-mix(in srgb,var(--g) 35%,transparent);text-underline-offset:3px}
+.vc-preset:hover{text-decoration-color:var(--g)}
+.vc-preset[aria-pressed="true"]{font-weight:700;text-decoration:none}
+.vc-padd{font-weight:600;text-decoration:none}
+
+/* info tip */
+.vc-ltip{display:inline-flex;align-items:center;gap:6px}
+.vc-tipw{position:relative;display:inline-flex}
+.vc-tipb{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--muted);background:transparent;color:var(--muted);
+  font:italic 700 11px/1 var(--sans)!important;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.vc-tipb:hover,.vc-tipb[aria-expanded="true"]{border-color:var(--g);color:var(--g)}
+.vc-tipb:focus-visible{outline:2px solid var(--g);outline-offset:2px}
+.vc-tipbub{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);width:240px;background:var(--ink);color:var(--paper);
+  font-size:14px;font-weight:400;line-height:1.45;padding:10px 12px;border-radius:10px;opacity:0;visibility:hidden;transition:opacity .15s;z-index:5;pointer-events:none}
+.vc-tipw:hover .vc-tipbub,.vc-tipb:focus-visible + .vc-tipbub,.vc-tipb[aria-expanded="true"] + .vc-tipbub{opacity:1;visibility:visible}
+
+/* where the savings come from */
+.vc-split{display:flex;gap:10px;flex-wrap:wrap}
+.vc-split div{flex:1 1 140px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column}
+.vc-split span{font-size:13px;color:var(--muted)}
+.vc-split b{font-size:20px;color:var(--g)}
+.vc-compare .vc-limit{font-size:15px;color:var(--muted)}
+
+/* chart */
+.vc-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
+.vc-legend span{display:inline-flex;align-items:center;gap:6px}
+.vc-legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.vc-chart svg{width:100%;height:auto;display:block}
+.vc-chart text{font-family:var(--sans);font-size:11px;fill:var(--muted)}
+.vc-cnote{font-size:14px;color:var(--muted)}
+.vc-future{border-top:1px solid var(--line);padding-top:10px}
+.vc-future summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:15px;color:var(--g)}
+.vc-future summary::-webkit-details-marker{display:none}
+.vc-future summary svg{transition:transform .2s;flex:none}
+.vc-future[open] summary svg{transform:rotate(180deg)}
+.vc-fbody{display:flex;flex-direction:column;gap:12px;padding-top:10px;font-size:15px}
+.vc-ftable{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.vc-ftable th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:6px 0;border-bottom:1px solid var(--line)}
+.vc-ftable td{padding:8px 0;border-bottom:1px solid var(--line)}
+.vc-ftable th:last-child,.vc-ftable td:last-child{text-align:right;font-weight:700}
+
+@media (max-width:560px){
+  .vc-card{border-radius:14px}
+  .vc-recap,.vc-top,.vc-compare,.vc-sec{padding:14px 16px}
+  .vc .vc-rhead{font-size:19px}
+  .vc-top{gap:6px}
+  .vc-top p,.vc-compare p{font-size:15px;line-height:1.5}
+  .vc-big{font-size:38px}
+  .vc-rows{margin-top:2px}
+  .vc-row{padding:6px 0;gap:8px}
+  .vc-row label,.vc-label{font-size:14px}
+  .vc-val{font-size:15px;gap:8px}
+  .vc-acc summary{padding-top:8px}
+  .vc-accb{padding-top:8px}
+  .vc-accp{padding:8px 0 10px}
+  .vc-step{gap:4px}
+  .vc-step button{width:26px;height:26px;font-size:15px}
+  .vc-field{width:76px;font-size:16px}
+  .vc-split{gap:8px}
+  .vc-split div{padding:8px 12px}
+  .vc-split b{font-size:18px}
+  .vc-chips{gap:6px}
+  .vc-chip{font-size:13px;padding:4px 10px}
+  .vc-legend{gap:4px 12px;font-size:13px}
+}
+@media (max-width:520px){ .vc-tipbub{left:0;transform:none;width:220px} }
+.vc summary svg{width:18px;height:18px;flex:none}
+.vc-future summary{gap:12px}
