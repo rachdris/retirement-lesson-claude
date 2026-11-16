@@ -945,7 +945,7 @@ body.vlook .arthead,body.vlook .prose,body.vlook .steps,body.vlook .calc{max-wid
 body.vlook .arthead h1{font-size:clamp(32px,6vw,44px);line-height:1.18;
   letter-spacing:-.01em;max-width:none}
 body.vlook .arthead .lede{font-size:18px;line-height:1.6;color:var(--ink)}
-body.vlook .prose{font-size:17px;line-height:1.6}
+body.vlook .prose{font-size:18px;line-height:1.6}
 body.vlook .prose h2{font-size:30px;line-height:1.18}
 body.vlook .prose h2 .stepk{margin-bottom:8px;font-size:12px;letter-spacing:.16em}
 body.vlook .prose h3{font-size:22px;line-height:1.18}
@@ -1174,3 +1174,39 @@ body.vlook .calc h2{font-size:22px}
 /* v12: the yearly amount under each monthly field */
 .vc-lab{display:flex;flex-direction:column;gap:1px;min-width:0}
 .vc-yr{font-size:13.5px;font-weight:400;line-height:1.3;color:var(--muted);font-variant-numeric:tabular-nums}
+/* v13: phone fixes from review */
+.vc-chart text{font-size:12px}
+@media (max-width:560px){
+  /* the tip spans the whole row instead of hanging off the icon */
+  .vc-row{position:relative}
+  .vc-tipw{position:static}
+  .vc .vc-tipbub{left:0;right:0;width:auto;transform:none;bottom:calc(100% - 4px)}
+}
+/* v14: phones, matched to Vercel: badge 2 sits on the saving curve and the
+   dashed "work back" arrow is hidden (its label already is) */
+@media (max-width:560px){
+  .jy-back{display:none}
+  .jy-b2{left:25.44%;top:89.29%}
+}
+/* v15: heading above the calculator, and Step One / Step Two tabs */
+.vc .vc-h{margin:0 0 14px;font:700 22px/1.18 var(--serif);color:var(--ink);letter-spacing:0}
+.vc-tabs{display:flex;background:var(--mist);border-bottom:1px solid var(--line)}
+.vc-tab{flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;gap:10px;
+  margin:0 0 -1px;padding:14px 12px 13px;border:0;border-bottom:3px solid transparent;background:transparent;
+  color:var(--muted);font-size:17px;font-weight:600;line-height:1.2;cursor:pointer;transition:background .15s,color .15s}
+.vc-tab:hover{color:var(--ink)}
+.vc-tab[aria-selected="true"]{background:var(--paper);color:var(--g);border-bottom-color:var(--g)}
+.vc-tab:focus-visible{outline:2px solid var(--g);outline-offset:-4px;border-radius:12px 12px 0 0}
+.vc-tn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;
+  font-size:13px;font-weight:700;background:color-mix(in srgb,var(--ink) 9%,var(--paper));color:var(--ink)}
+.vc-tab[aria-selected="true"] .vc-tn{background:var(--g);color:var(--paper)}
+.vc-panel{display:flex;flex-direction:column}
+.vc-panel .vc-recap{padding-top:26px}
+@media (max-width:560px){
+  .vc-tab{gap:8px;padding:12px 8px 11px;font-size:15px}
+  .vc-tn{width:22px;height:22px;font-size:12px}
+  .vc-panel .vc-recap{padding-top:18px}
+}
+/* v16: employer notes under "Where your savings come from" */
+.vc-notes{display:flex;flex-direction:column;gap:8px}
+.vc-compare .vc-notes p{font-size:15px;color:var(--muted)}
