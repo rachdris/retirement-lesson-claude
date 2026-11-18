@@ -38,7 +38,7 @@
   --serif:'Source Serif 4',Georgia,serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
 html,body{margin:0;padding:0}
 body{background:#fff;color:var(--ink);font:17px/1.55 var(--sans);
   -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
@@ -54,7 +54,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .skip:focus{left:0}
 
 /* ------------------------------------------------------------------ header */
-.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.93);
+.top{position:relative;z-index:30;background:rgba(255,255,255,.93);
   backdrop-filter:saturate(1.6) blur(8px);border-bottom:1px solid var(--line)}
 .bar{max-width:1080px;margin:0 auto;padding:11px 20px;display:flex;
   align-items:center;justify-content:space-between;gap:16px}
