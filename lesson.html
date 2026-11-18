@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Working out the total you are aiming at, reading
+  where you are against it, and turning the distance between the two into a yearly
+  amount." />
+<meta name="theme-color" content="#0D3B4F" />
+<title>How much do I need to retire, and how do I get there?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- v8: Source Serif 4 at 400-700 with optical sizing, as in the Vercel version -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=135" />
+</head>
+<body class="vlook">
+
+<a class="skip" href="#read">Skip to the article</a>
+
+<header class="top">
+  <div class="bar">
+    <span class="brand">
+      <svg class="mark" viewBox="0 0 20 26" aria-hidden="true" focusable="false">
+        <path d="M10 1.5c4 2.6 6.2 6.6 6.2 11.2C16.2 19 13.6 23.3 10 25
+                 6.4 23.3 3.8 19 3.8 12.7 3.8 8.1 6 4.1 10 1.5Z" fill="currentColor"/>
+        <path d="M4.4 9.5 10 12.8l5.6-3.3M4.1 15.2 10 18.6l5.9-3.4"
+              fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"
+              stroke-linejoin="round" opacity=".85"/>
+      </svg>
+      <span class="name">Pinecone<small>by Stanford</small></span>
+    </span>
+  </div>
+</header>
+
+<main id="page">
+
+  <section class="artmain">
+    <div class="in">
+
+      <div class="arthead" data-edit="article heading (v6)">
+        <h1>How much do I need to retire, and how do I get there?</h1>
+        <p>The amount you&rsquo;ll need to retire is different for everyone. These two steps help you
+          estimate your retirement savings goal and make a plan to reach it.</p>
+      </div>
+
+      <!-- v9: the journey diagram (from the Vercel version) is the step map.
+           Savings rise, peak on the day you retire, then fall. Step 1 is the
+           peak; Step 2 works back from it. Outside every data-edit region. -->
+      <figure class="jy" aria-labelledby="jy-desc">
+        <p id="jy-desc" class="jy-sr">Your savings grow from today until you retire, peak on the day you retire, then shrink as you spend them in retirement. Step 1 finds the peak. Step 2 works backward from it to what you save each year.</p>
+        <div class="jy-plot">
+          <svg viewBox="0 0 680 280" aria-hidden="true" focusable="false">
+            <defs>
+              <marker id="jy-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#0c3441" />
+              </marker>
+            </defs>
+            <path class="jy-aup jy-fade" d="M40,268 C200,262 320,210 400,100 L400,270 L40,270 Z" />
+            <path class="jy-adown jy-fade jy-d1" d="M400,100 C470,120 580,190 640,270 L400,270 Z" />
+            <line class="jy-base" x1="40" y1="270" x2="640" y2="270" />
+            <line class="jy-retire jy-fade jy-d1" x1="400" y1="108" x2="400" y2="270" />
+            <path class="jy-up jy-draw" pathLength="1" d="M40,268 C200,262 320,210 400,100" />
+            <path class="jy-down jy-draw jy-draw2" pathLength="1" d="M400,100 C470,120 580,190 640,270" />
+            <circle class="jy-fade jy-d1" cx="400" cy="100" r="7" fill="#14614f" stroke="#fff" stroke-width="2.5" />
+            <path class="jy-back jy-fade jy-d2" d="M386,98 C346,120 306,138 262,150" marker-end="url(#jy-arrow)" />
+          </svg>
+          <a class="jy-ann jy-ann1 jy-fade jy-d1" href="#step-one">
+            <span class="jy-row"><span class="stpill">Step 1</span><span class="jy-t">Find your target number</span></span>
+            <span class="jy-s">what you&rsquo;ll need the day you retire</span>
+          </a>
+          <span class="jy-backlab jy-fade jy-d2" aria-hidden="true">then work back</span>
+          <a class="jy-ann jy-ann2 jy-fade jy-d3" href="#step-two">
+            <span class="jy-row"><span class="stpill">Step 2</span><span class="jy-t">Plan how to get there</span></span>
+            <span class="jy-s">what to save each year until then</span>
+          </a>
+          <span class="jy-badge jy-b1 jy-fade jy-d1" aria-hidden="true">1</span>
+          <span class="jy-badge jy-b2 jy-fade jy-d3" aria-hidden="true">2</span>
+        </div>
+        <div class="jy-phases" aria-hidden="true">
+          <span>Saving while you work</span>
+          <span>Spending in retirement</span>
+        </div>
+        <ol class="jy-list">
+          <li><a href="#step-one"><span class="jy-n">1</span><span><span class="jy-t">Find your target number</span><span class="jy-s">what you&rsquo;ll need the day you retire</span></span></a></li>
+          <li><a href="#step-two"><span class="jy-n">2</span><span><span class="jy-t">Plan how to get there</span><span class="jy-s">what to save each year until then</span></span></a></li>
+        </ol>
+      </figure>
+
+      <!-- Empty on purpose: the copy is being written in the browser. Add a
+           nav.contents block above this once the h2s are settled, since the
+           contents list has to match the headings that actually exist.
+
+           A calculator belongs on this page more than anywhere else on the
+           site. Put it OUTSIDE this data-edit region: editor.js only touches
+           [data-edit], so an interactive sitting outside one can use plain
+           inputs and plain JS. -->
+      <article class="prose" id="read" data-edit="article body (v6)">
+        <h2 id="step-one"><span class="stepk">Step One:</span> Find your target number</h2>
+
+        <p>Start by asking yourself a few questions, then enter your answers into
+          the <a href="#a-calculator">calculator</a> to find your estimate.</p>
+
+        <h3>How much do you expect to spend in retirement?</h3>
+
+        <p>Think about how much you would need each month to live comfortably in
+          retirement. For example, if $5,000 a month ($60,000 a year) would cover
+          your needs and wants, that&rsquo;s your starting point.</p>
+
+        <p>Not sure? Start with what you spend now. Your estimate will get clearer
+          as retirement gets closer.</p>
+
+        <p>Use <strong>today&rsquo;s prices</strong>, even though prices will be
+          higher by the time you retire. The rise in prices over time is called
+          inflation, and it&rsquo;s accounted for later in this step so you
+          don&rsquo;t have to guess future prices.</p>
+
+        <h3>Will you have income in retirement?</h3>
+
+        <p>If you&rsquo;ll have income in retirement, like from a pension or
+          Social Security, the amount of savings you need to cover your expected
+          spending will be less.</p>
+
+        <h3>How long do you expect to be retired?</h3>
+
+        <p>Many people plan to retire at 65, and Americans who reach 65 can expect to
+          live about 20 more years on average, according to the
+          <a class="soon">CDC</a>. Many live longer, so planning
+          for longer periods, 25 or 30 years, is reasonable.</p>
+
+        <p>If you&rsquo;d like to retire sooner, or expect to live longer,
+          you&rsquo;ll have to cover more years.</p>
+
+        <h3>How much do you expect your investments to grow in retirement?</h3>
+
+        <p>Your expected return is an estimate of how much your savings will grow
+          each year, and the return depends on <a class="soon">what you invest in</a>.</p>
+
+        <p>In retirement, many people shift toward safer investments, like bonds,
+          which typically come with lower returns. <strong>A 4% return</strong>, before
+          inflation, is a common assumption.</p>
+
+        <p>The Federal Reserve aims for
+          <a class="soon">2%</a> annual inflation, though it has been higher
+          in recent years. At 2%, prices double about every 35 years, so $5,000 a
+          month in 35 years would only buy what $2,500 buys today.</p>
+
+        <p>Plan in today&rsquo;s dollars by <strong>subtracting expected inflation
+          from your expected return.</strong></p>
+
+        <h3>Example: Putting it all together</h3>
+
+        <p>Suppose you estimate you&rsquo;ll need $60,000 a year to live
+          comfortably in retirement and want to first plan without other income
+          sources. You want to retire a little early at 60 and
+          plan to live to 90, a 30-year retirement.</p>
+
+        <p>You plan on holding your savings in safer investments that generate a
+          return, say 4% before inflation. Subtracting the 2% target inflation
+          rate, you plan on 2% growth.</p>
+
+        <div class="keynum">
+          <span class="ctitle">Your target number:</span>
+          <span class="kfig">$1,343,787</span>
+          <span class="klabel">With this saved in today&rsquo;s dollars by age 60,
+            you can spend what $60,000 buys today every year until 90, when your
+            savings run out.</span>
+          <span class="klabel">If you <strong>ignored inflation</strong> and used
+            4%, your target would be $1,037,522 (about $300,000 less). In
+            today&rsquo;s dollars, that would only support about $46,000 a year,
+            falling short of your $60,000 goal.</span>
+        </div>
+
+        <details class="math">
+          <summary>The math behind the number:</summary>
+          <div class="dbody">
+            <div class="formula"><var>PV</var><span class="op">=</span><span class="frac"><span class="num"><var>C</var></span><span class="den"><var>r</var></span></span><span class="par">(</span>1<span class="op">&minus;</span><span class="frac"><span class="num">1</span><span class="den">(1+<var>r</var>)<sup><var>T</var></sup></span></span><span class="par">)</span></div>
+            <ul>
+              <li><var>PV</var> = the retirement number (what you&rsquo;re solving for)</li>
+              <li><var>C</var> = 60,000 (yearly retirement spending)</li>
+              <li><var>r</var> = 0.02 (a 2% return after inflation)</li>
+              <li><var>T</var> = 30 (years of retirement)</li>
+            </ul>
+            <p class="mstep">With the numbers filled in:</p>
+            <div class="formula"><var>PV</var><span class="op">=</span><span class="frac"><span class="num">60,000</span><span class="den">0.02</span></span><span class="par">(</span>1<span class="op">&minus;</span><span class="frac"><span class="num">1</span><span class="den">(1.02)<sup>30</sup></span></span><span class="par">)</span></div>
+            <ol class="msteps">
+              <li>60,000 &divide; 0.02 = 3,000,000</li>
+              <li>(1.02)<sup>30</sup> = 1.811362, and 1 &divide; 1.811362 = 0.552071</li>
+              <li>1 &minus; 0.552071 = 0.447929</li>
+              <li>3,000,000 &times; 0.447929 = <strong>$1,343,787</strong></li>
+            </ol>
+          </div>
+        </details>
+
+      </article>
+
+      <!-- v10: the calculator, matched to the Vercel version. The same calculator
+           appears twice, each with Step One / Step Two tabs: this copy opens on
+           Step One, the copy after Step Two opens on Step Two. Both share one set
+           of answers. They sit OUTSIDE every data-edit region, so editor.js never
+           touches their inputs. -->
+      <section class="vc" id="a-calculator" aria-labelledby="a-vc-h">
+        <h2 class="vc-h" id="a-vc-h">Try it with your numbers</h2>
+        <div class="vc-card">
+          <div class="vc-tabs" role="tablist" aria-label="Calculator steps">
+            <button type="button" class="vc-tab" role="tab" id="a-vc-t1" aria-controls="a-vc-p1" aria-selected="true" tabindex="0"><span class="vc-tn" aria-hidden="true">1</span>Target number</button>
+            <button type="button" class="vc-tab" role="tab" id="a-vc-t2" aria-controls="a-vc-p2" aria-selected="false" tabindex="-1"><span class="vc-tn" aria-hidden="true">2</span>Savings plan</button>
+          </div>
+          <div class="vc-panel" role="tabpanel" id="a-vc-p1" aria-labelledby="a-vc-t1">
+          <div class="vc-recap">
+            <div class="vc-rows">
+              <div class="vc-row"><span class="vc-lab"><label for="a-vc-monthly">Monthly spending</label><span class="vc-yr" data-out="spendYr"></span></span><div class="vc-step"><button type="button" data-step="monthly" data-by="-250" aria-label="Decrease monthly spending">&minus;</button><span class="vc-field"><span class="vc-unit">$</span><input id="a-vc-monthly" data-bind="monthly" data-type="money" inputmode="numeric" maxlength="7" /></span><button type="button" data-step="monthly" data-by="250" aria-label="Increase monthly spending">+</button></div></div>
+              <div class="vc-row"><span class="vc-lab"><span class="vc-ltip"><label for="a-vc-other">Other monthly income</label><span class="vc-tipw"><button type="button" class="vc-tipb" aria-label="What counts as other monthly income?" aria-describedby="a-vc-tip-other" aria-expanded="false">i</button><span class="vc-tipbub" role="tooltip" id="a-vc-tip-other">Income you expect to get each month in retirement, from sources like a pension or Social Security.</span></span></span><span class="vc-yr" data-out="otherYr"></span></span><div class="vc-step"><button type="button" data-step="other" data-by="-250" aria-label="Decrease other income">&minus;</button><span class="vc-field"><span class="vc-unit">$</span><input id="a-vc-other" data-bind="other" data-type="money" inputmode="numeric" maxlength="7" /></span><button type="button" data-step="other" data-by="250" aria-label="Increase other income">+</button></div></div>
+              <div class="vc-row"><label for="a-vc-years">Years in retirement</label><div class="vc-step"><button type="button" data-step="years" data-by="-1" aria-label="Fewer years">&minus;</button><span class="vc-field"><input id="a-vc-years" data-bind="years" data-type="int" inputmode="numeric" maxlength="2" /><span class="vc-unit">yrs</span></span><button type="button" data-step="years" data-by="1" aria-label="More years">+</button></div></div>
+              <div class="vc-row"><label for="a-vc-ret">Return in retirement</label><div class="vc-step"><button type="button" data-step="retReturn" data-by="-0.5" aria-label="Lower return">&minus;</button><span class="vc-field"><input id="a-vc-ret" data-bind="retReturn" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="retReturn" data-by="0.5" aria-label="Higher return">+</button></div></div>
+              <div class="vc-row"><label for="a-vc-infl1">Inflation</label><div class="vc-step"><button type="button" data-step="inflation" data-by="-0.5" aria-label="Lower inflation">&minus;</button><span class="vc-field"><input id="a-vc-infl1" data-bind="inflation" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="inflation" data-by="0.5" aria-label="Higher inflation">+</button></div></div>
+            </div>
+          </div>
+          <div class="vc-top" aria-live="polite">
+            <span class="vc-eye">Your target number</span>
+            <div class="vc-big" data-tween="target"></div>
+            <p data-out="targetLine"></p>
+          </div>
+          <div class="vc-compare" data-needs-compare>
+            <span class="vc-eye">Why inflation matters</span>
+            <p data-out="compareLine"></p>
+          </div>
+          <div class="vc-sec vc-scen">
+            <span class="vc-eye">Try a scenario</span>
+            <div class="vc-chips">
+              <button type="button" class="vc-chip" data-scen="less">Spend $10,000 less a year</button>
+              <button type="button" class="vc-chip" data-scen="fewer">Plan for 5 fewer years</button>
+              <button type="button" class="vc-chip" data-scen="more">Plan for 5 more years</button>
+              <button type="button" class="vc-chip" data-scen="reset">Reset to example</button>
+            </div>
+          </div>
+        </div>
+          <div class="vc-panel" role="tabpanel" id="a-vc-p2" aria-labelledby="a-vc-t2" hidden>
+          <div class="vc-recap">
+            <div class="vc-rows">
+              <div class="vc-row"><span class="vc-label">Target from Step One</span><span class="vc-val"><b class="num" data-out="targetTxt"></b> <a href="#a-vc-p1" class="vc-edit">Edit</a></span></div>
+              <div class="vc-row"><label for="a-vc-ytr">Years until retirement</label><div class="vc-step"><button type="button" data-step="ytr" data-by="-1" aria-label="Fewer years until retirement">&minus;</button><span class="vc-field"><input id="a-vc-ytr" data-bind="ytr" data-type="int" inputmode="numeric" maxlength="2" /><span class="vc-unit">yrs</span></span><button type="button" data-step="ytr" data-by="1" aria-label="More years until retirement">+</button></div></div>
+              <div class="vc-row"><label for="a-vc-saved">Saved so far</label><div class="vc-step"><button type="button" data-step="saved" data-by="-5000" aria-label="Decrease savings so far">&minus;</button><span class="vc-field"><span class="vc-unit">$</span><input id="a-vc-saved" data-bind="saved" data-type="money" inputmode="numeric" maxlength="11" /></span><button type="button" data-step="saved" data-by="5000" aria-label="Increase savings so far">+</button></div></div>
+              <div class="vc-row"><label for="a-vc-work">Return while working</label><div class="vc-step"><button type="button" data-step="workReturn" data-by="-0.5" aria-label="Lower return while working">&minus;</button><span class="vc-field"><input id="a-vc-work" data-bind="workReturn" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="workReturn" data-by="0.5" aria-label="Higher return while working">+</button></div></div>
+              <div class="vc-row"><label for="a-vc-infl2">Inflation</label><div class="vc-step"><button type="button" data-step="inflation" data-by="-0.5" aria-label="Lower inflation">&minus;</button><span class="vc-field"><input id="a-vc-infl2" data-bind="inflation" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="inflation" data-by="0.5" aria-label="Higher inflation">+</button></div></div>
+              <details class="vc-acc">
+                <summary><span class="vc-label">Employer contributions</span><span class="vc-val"><b class="num" data-out="empRow"></b><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+                <div class="vc-accb">
+                  <div class="vc-chips" role="group" aria-label="What your employer puts in">
+                    <button type="button" class="vc-chip" data-kind="hasMatch" aria-pressed="false">A match on what I put in</button>
+                    <button type="button" class="vc-chip" data-kind="hasAuto" aria-pressed="false">A set % of my pay</button>
+                  </div>
+                  <div class="vc-row acc-salary" hidden><label for="a-vc-salary">Yearly pay</label><div class="vc-step"><button type="button" data-step="salary" data-by="-5000" aria-label="Decrease yearly pay">&minus;</button><span class="vc-field"><span class="vc-unit">$</span><input id="a-vc-salary" data-bind="salary" data-type="money" inputmode="numeric" maxlength="10" /></span><button type="button" data-step="salary" data-by="5000" aria-label="Increase yearly pay">+</button></div></div>
+                  <div class="vc-row acc-match" hidden><label for="a-vc-mpct">Match rate</label><div class="vc-step"><button type="button" data-step="matchPct" data-by="-25" aria-label="Lower match rate">&minus;</button><span class="vc-field"><input id="a-vc-mpct" data-bind="matchPct" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="matchPct" data-by="25" aria-label="Higher match rate">+</button></div></div>
+                  <div class="vc-row acc-match" hidden><label for="a-vc-mcap">Matched up to</label><div class="vc-step"><button type="button" data-step="matchCap" data-by="-1" aria-label="Lower match limit">&minus;</button><span class="vc-field"><input id="a-vc-mcap" data-bind="matchCap" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">% of pay</span></span><button type="button" data-step="matchCap" data-by="1" aria-label="Higher match limit">+</button></div></div>
+                  <div class="vc-row acc-tier2" hidden><label for="a-vc-t2pct">Then matches</label><div class="vc-step"><button type="button" data-step="tier2Pct" data-by="-25" aria-label="Lower second match rate">&minus;</button><span class="vc-field"><input id="a-vc-t2pct" data-bind="tier2Pct" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="tier2Pct" data-by="25" aria-label="Higher second match rate">+</button></div></div>
+                  <div class="vc-row acc-tier2" hidden><label for="a-vc-t2cap">Of the next</label><div class="vc-step"><button type="button" data-step="tier2Cap" data-by="-1" aria-label="Lower second match limit">&minus;</button><span class="vc-field"><input id="a-vc-t2cap" data-bind="tier2Cap" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">% of pay</span></span><button type="button" data-step="tier2Cap" data-by="1" aria-label="Higher second match limit">+</button></div></div>
+                  <div class="vc-presets vc-accp acc-match" role="group" aria-labelledby="a-vc-plan-q" hidden>
+                    <span class="vc-plabel" id="a-vc-plan-q">Common setups:</span>
+                    <button type="button" class="vc-preset" data-plan="100,6" aria-pressed="false">100% up to 6%</button>
+                    <button type="button" class="vc-preset" data-plan="50,6" aria-pressed="false">50% up to 6%</button>
+                    <button type="button" class="vc-preset" data-plan="100,4" aria-pressed="false">100% up to 4%</button>
+                    <button type="button" class="vc-preset" data-plan="100,3,50,2" aria-pressed="false">100% of 3%, then 50% of 2%</button>
+                    <button type="button" class="vc-preset vc-padd vc-tier2" aria-expanded="false"><span>+ Add a second level</span></button>
+                  </div>
+                  <div class="vc-row acc-auto" hidden><label for="a-vc-auto">Automatic contribution</label><div class="vc-step"><button type="button" data-step="autoPct" data-by="-1" aria-label="Lower automatic contribution">&minus;</button><span class="vc-field"><input id="a-vc-auto" data-bind="autoPct" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">% of pay</span></span><button type="button" data-step="autoPct" data-by="1" aria-label="Higher automatic contribution">+</button></div></div>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="vc-top" aria-live="polite">
+            <span class="vc-eye">Annual savings</span>
+            <div class="vc-big"><span data-tween="annual"></span> <small>a year</small></div>
+            <p data-out="annualLine"></p>
+          </div>
+          <div class="vc-compare" data-needs-match>
+            <span class="vc-eye">Where your savings come from</span>
+            <div class="vc-split" data-out="splitHtml"></div>
+            <div class="vc-notes" data-out="empNotes"></div>
+          </div>
+          <div class="vc-sec vc-chart">
+            <div class="vc-legend"></div>
+            <svg class="vc-svg" viewBox="0 0 600 240" role="img" aria-label="How your savings grow until you retire"></svg>
+            <p class="vc-cnote" data-out="chartNote"></p>
+            <details class="vc-future">
+              <summary>In future dollars <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="vc-fbody"></div>
+            </details>
+          </div>
+          <div class="vc-sec vc-scen">
+            <span class="vc-eye">Try a scenario</span>
+            <div class="vc-chips">
+              <button type="button" class="vc-chip" data-scen="sooner">Start saving 5 years sooner</button>
+              <button type="button" class="vc-chip" data-scen="later">Start saving 5 years later</button>
+              <button type="button" class="vc-chip" data-scen="less">Spend $10,000 less a year in retirement</button>
+              <button type="button" class="vc-chip" data-scen="reset">Reset to example</button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <article class="prose" data-edit="article body, continued (v6)">
+        <h2 id="step-two"><span class="stepk">Step Two:</span> Plan how to get there</h2>
+
+        <p>Now that you have your retirement target, you can figure out how much to save
+          and invest each year to reach it. A few questions shape
+          the answer:</p>
+
+        <h3>How many years do you have until retirement?</h3>
+
+        <p>The further away retirement is, the less you have to save each year due
+          to <a class="soon">compound growth</a>, where you earn a
+          return on both your contributions and your past earnings.</p>
+
+        <p><a class="soon">Waiting to save</a> means you will have to save more each
+          year to reach the same target.</p>
+
+        <h3>How much do you expect your investments to grow while you work?</h3>
+
+        <p>While saving for retirement, people often hold a larger share of
+          higher-risk investments, like stocks. Historically, U.S. stocks have
+          grown around
+          <a class="soon">10%</a> a year, before inflation, making
+          6% to 8% after inflation a common assumption for retirement savings
+          invested mostly in stocks.</p>
+
+        <p>Your return depends on what you invest in (stocks, bonds, cash), as well
+          as how you diversify risk and what you pay in fees:</p>
+
+        <ul>
+          <li><a class="soon">Diversifying</a> means spreading your money across many
+            investments. This reduces your reliance on any one of them, makes your returns less volatile and your plan easier to stick with.</li>
+          <li><a class="soon">Fees</a> add up over time and eat into your returns.</li>
+        </ul>
+
+        <h3>Does your employer put money into your retirement account?</h3>
+
+        <p>In many jobs, your employer will add money to your retirement account,
+          but often only if you put in some of your own. This is called an
+          <a class="soon">employer match</a>.</p>
+
+        <p>For example, say your employer matches 100% of what you put in up to
+          5% of your pay. If you contribute 5%, your employer adds another 5%.
+          Some employers also add a set percentage of your pay automatically,
+          whether you put in money or not.</p>
+
+        <p>Your yearly savings amount stays the same. The match reduces how
+          much you need to contribute yourself.</p>
+
+        <p>Workplace retirement accounts go by different names, such as 401(k),
+          403(b), 457(b) or Thrift Savings Plan.</p>
+
+        <h3>Example</h3>
+
+        <p>Say you determined in Step One that you need <strong>$1,343,787</strong>
+          for retirement. You start saving at 25 and plan to retire at 60, so you have 35 years.</p>
+
+        <p>While you work, you expect a 9% annual return before inflation.
+          Subtracting 2% inflation leaves 7%. To reach your target, you need to
+          save:</p>
+
+        <div class="keynum">
+          <span class="ctitle">Annual savings:</span>
+          <span class="kfig">$9,721 a year</span>
+          <span class="klabel">This is in today&rsquo;s dollars. In practice, you
+            would save <strong>$9,721 in your first year</strong>, then raise the
+            amount by 2% each year to keep up with inflation, so every year you are
+            setting aside the equivalent of $9,721 of today&rsquo;s spending.</span>
+        </div>
+
+        <details class="math">
+          <summary>The math behind this answer:</summary>
+          <div class="dbody">
+            <div class="formula"><var>FV</var><span class="op">=</span><span class="frac"><span class="num"><var>C</var></span><span class="den"><var>r</var></span></span><span class="par">(</span><span class="grp">(1+<var>r</var>)<sup><var>T</var></sup></span><span class="op">&minus;</span>1<span class="par">)</span></div>
+            <ul>
+              <li><var>FV</var> = 1,343,787 (the retirement number from Step One)</li>
+              <li><var>C</var> = the yearly savings (what you&rsquo;re solving for)</li>
+              <li><var>r</var> = 0.07 (a 7% return after inflation)</li>
+              <li><var>T</var> = 35 (years until retirement)</li>
+            </ul>
+            <p class="mstep">With the numbers filled in:</p>
+            <div class="formula">1,343,787<span class="op">=</span><span class="frac"><span class="num"><var>C</var></span><span class="den">0.07</span></span><span class="par">(</span><span class="grp">(1.07)<sup>35</sup></span><span class="op">&minus;</span>1<span class="par">)</span></div>
+            <ol class="msteps">
+              <li>(1.07)<sup>35</sup> = 10.676581, and 10.676581 &minus; 1 = 9.676581</li>
+              <li>1,343,787 &times; 0.07 = 94,065.09</li>
+              <li>94,065.09 &divide; 9.676581 = <strong>$9,721</strong></li>
+            </ol>
+          </div>
+        </details>
+
+      </article>
+
+      <section class="vc" id="calculator" aria-labelledby="b-vc-h">
+        <h2 class="vc-h" id="b-vc-h">Try it with your numbers</h2>
+        <div class="vc-card">
+          <div class="vc-tabs" role="tablist" aria-label="Calculator steps">
+            <button type="button" class="vc-tab" role="tab" id="b-vc-t1" aria-controls="b-vc-p1" aria-selected="false" tabindex="-1"><span class="vc-tn" aria-hidden="true">1</span>Target number</button>
+            <button type="button" class="vc-tab" role="tab" id="b-vc-t2" aria-controls="b-vc-p2" aria-selected="true" tabindex="0"><span class="vc-tn" aria-hidden="true">2</span>Savings plan</button>
+          </div>
+          <div class="vc-panel" role="tabpanel" id="b-vc-p1" aria-labelledby="b-vc-t1" hidden>
+          <div class="vc-recap">
+            <div class="vc-rows">
+              <div class="vc-row"><span class="vc-lab"><label for="b-vc-monthly">Monthly spending</label><span class="vc-yr" data-out="spendYr"></span></span><div class="vc-step"><button type="button" data-step="monthly" data-by="-250" aria-label="Decrease monthly spending">&minus;</button><span class="vc-field"><span class="vc-unit">$</span><input id="b-vc-monthly" data-bind="monthly" data-type="money" inputmode="numeric" maxlength="7" /></span><button type="button" data-step="monthly" data-by="250" aria-label="Increase monthly spending">+</button></div></div>
+              <div class="vc-row"><span class="vc-lab"><span class="vc-ltip"><label for="b-vc-other">Other monthly income</label><span class="vc-tipw"><button type="button" class="vc-tipb" aria-label="What counts as other monthly income?" aria-describedby="b-vc-tip-other" aria-expanded="false">i</button><span class="vc-tipbub" role="tooltip" id="b-vc-tip-other">Income you expect to get each month in retirement, from sources like a pension or Social Security.</span></span></span><span class="vc-yr" data-out="otherYr"></span></span><div class="vc-step"><button type="button" data-step="other" data-by="-250" aria-label="Decrease other income">&minus;</button><span class="vc-field"><span class="vc-unit">$</span><input id="b-vc-other" data-bind="other" data-type="money" inputmode="numeric" maxlength="7" /></span><button type="button" data-step="other" data-by="250" aria-label="Increase other income">+</button></div></div>
+              <div class="vc-row"><label for="b-vc-years">Years in retirement</label><div class="vc-step"><button type="button" data-step="years" data-by="-1" aria-label="Fewer years">&minus;</button><span class="vc-field"><input id="b-vc-years" data-bind="years" data-type="int" inputmode="numeric" maxlength="2" /><span class="vc-unit">yrs</span></span><button type="button" data-step="years" data-by="1" aria-label="More years">+</button></div></div>
+              <div class="vc-row"><label for="b-vc-ret">Return in retirement</label><div class="vc-step"><button type="button" data-step="retReturn" data-by="-0.5" aria-label="Lower return">&minus;</button><span class="vc-field"><input id="b-vc-ret" data-bind="retReturn" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="retReturn" data-by="0.5" aria-label="Higher return">+</button></div></div>
+              <div class="vc-row"><label for="b-vc-infl1">Inflation</label><div class="vc-step"><button type="button" data-step="inflation" data-by="-0.5" aria-label="Lower inflation">&minus;</button><span class="vc-field"><input id="b-vc-infl1" data-bind="inflation" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="inflation" data-by="0.5" aria-label="Higher inflation">+</button></div></div>
+            </div>
+          </div>
+          <div class="vc-top" aria-live="polite">
+            <span class="vc-eye">Your target number</span>
+            <div class="vc-big" data-tween="target"></div>
+            <p data-out="targetLine"></p>
+          </div>
+          <div class="vc-compare" data-needs-compare>
+            <span class="vc-eye">Why inflation matters</span>
+            <p data-out="compareLine"></p>
+          </div>
+          <div class="vc-sec vc-scen">
+            <span class="vc-eye">Try a scenario</span>
+            <div class="vc-chips">
+              <button type="button" class="vc-chip" data-scen="less">Spend $10,000 less a year</button>
+              <button type="button" class="vc-chip" data-scen="fewer">Plan for 5 fewer years</button>
+              <button type="button" class="vc-chip" data-scen="more">Plan for 5 more years</button>
+              <button type="button" class="vc-chip" data-scen="reset">Reset to example</button>
+            </div>
+          </div>
+        </div>
+          <div class="vc-panel" role="tabpanel" id="b-vc-p2" aria-labelledby="b-vc-t2">
+          <div class="vc-recap">
+            <div class="vc-rows">
+              <div class="vc-row"><span class="vc-label">Target from Step One</span><span class="vc-val"><b class="num" data-out="targetTxt"></b> <a href="#b-vc-p1" class="vc-edit">Edit</a></span></div>
+              <div class="vc-row"><label for="b-vc-ytr">Years until retirement</label><div class="vc-step"><button type="button" data-step="ytr" data-by="-1" aria-label="Fewer years until retirement">&minus;</button><span class="vc-field"><input id="b-vc-ytr" data-bind="ytr" data-type="int" inputmode="numeric" maxlength="2" /><span class="vc-unit">yrs</span></span><button type="button" data-step="ytr" data-by="1" aria-label="More years until retirement">+</button></div></div>
+              <div class="vc-row"><label for="b-vc-saved">Saved so far</label><div class="vc-step"><button type="button" data-step="saved" data-by="-5000" aria-label="Decrease savings so far">&minus;</button><span class="vc-field"><span class="vc-unit">$</span><input id="b-vc-saved" data-bind="saved" data-type="money" inputmode="numeric" maxlength="11" /></span><button type="button" data-step="saved" data-by="5000" aria-label="Increase savings so far">+</button></div></div>
+              <div class="vc-row"><label for="b-vc-work">Return while working</label><div class="vc-step"><button type="button" data-step="workReturn" data-by="-0.5" aria-label="Lower return while working">&minus;</button><span class="vc-field"><input id="b-vc-work" data-bind="workReturn" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="workReturn" data-by="0.5" aria-label="Higher return while working">+</button></div></div>
+              <div class="vc-row"><label for="b-vc-infl2">Inflation</label><div class="vc-step"><button type="button" data-step="inflation" data-by="-0.5" aria-label="Lower inflation">&minus;</button><span class="vc-field"><input id="b-vc-infl2" data-bind="inflation" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="inflation" data-by="0.5" aria-label="Higher inflation">+</button></div></div>
+              <details class="vc-acc">
+                <summary><span class="vc-label">Employer contributions</span><span class="vc-val"><b class="num" data-out="empRow"></b><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+                <div class="vc-accb">
+                  <div class="vc-chips" role="group" aria-label="What your employer puts in">
+                    <button type="button" class="vc-chip" data-kind="hasMatch" aria-pressed="false">A match on what I put in</button>
+                    <button type="button" class="vc-chip" data-kind="hasAuto" aria-pressed="false">A set % of my pay</button>
+                  </div>
+                  <div class="vc-row acc-salary" hidden><label for="b-vc-salary">Yearly pay</label><div class="vc-step"><button type="button" data-step="salary" data-by="-5000" aria-label="Decrease yearly pay">&minus;</button><span class="vc-field"><span class="vc-unit">$</span><input id="b-vc-salary" data-bind="salary" data-type="money" inputmode="numeric" maxlength="10" /></span><button type="button" data-step="salary" data-by="5000" aria-label="Increase yearly pay">+</button></div></div>
+                  <div class="vc-row acc-match" hidden><label for="b-vc-mpct">Match rate</label><div class="vc-step"><button type="button" data-step="matchPct" data-by="-25" aria-label="Lower match rate">&minus;</button><span class="vc-field"><input id="b-vc-mpct" data-bind="matchPct" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="matchPct" data-by="25" aria-label="Higher match rate">+</button></div></div>
+                  <div class="vc-row acc-match" hidden><label for="b-vc-mcap">Matched up to</label><div class="vc-step"><button type="button" data-step="matchCap" data-by="-1" aria-label="Lower match limit">&minus;</button><span class="vc-field"><input id="b-vc-mcap" data-bind="matchCap" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">% of pay</span></span><button type="button" data-step="matchCap" data-by="1" aria-label="Higher match limit">+</button></div></div>
+                  <div class="vc-row acc-tier2" hidden><label for="b-vc-t2pct">Then matches</label><div class="vc-step"><button type="button" data-step="tier2Pct" data-by="-25" aria-label="Lower second match rate">&minus;</button><span class="vc-field"><input id="b-vc-t2pct" data-bind="tier2Pct" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">%</span></span><button type="button" data-step="tier2Pct" data-by="25" aria-label="Higher second match rate">+</button></div></div>
+                  <div class="vc-row acc-tier2" hidden><label for="b-vc-t2cap">Of the next</label><div class="vc-step"><button type="button" data-step="tier2Cap" data-by="-1" aria-label="Lower second match limit">&minus;</button><span class="vc-field"><input id="b-vc-t2cap" data-bind="tier2Cap" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">% of pay</span></span><button type="button" data-step="tier2Cap" data-by="1" aria-label="Higher second match limit">+</button></div></div>
+                  <div class="vc-presets vc-accp acc-match" role="group" aria-labelledby="b-vc-plan-q" hidden>
+                    <span class="vc-plabel" id="b-vc-plan-q">Common setups:</span>
+                    <button type="button" class="vc-preset" data-plan="100,6" aria-pressed="false">100% up to 6%</button>
+                    <button type="button" class="vc-preset" data-plan="50,6" aria-pressed="false">50% up to 6%</button>
+                    <button type="button" class="vc-preset" data-plan="100,4" aria-pressed="false">100% up to 4%</button>
+                    <button type="button" class="vc-preset" data-plan="100,3,50,2" aria-pressed="false">100% of 3%, then 50% of 2%</button>
+                    <button type="button" class="vc-preset vc-padd vc-tier2" aria-expanded="false"><span>+ Add a second level</span></button>
+                  </div>
+                  <div class="vc-row acc-auto" hidden><label for="b-vc-auto">Automatic contribution</label><div class="vc-step"><button type="button" data-step="autoPct" data-by="-1" aria-label="Lower automatic contribution">&minus;</button><span class="vc-field"><input id="b-vc-auto" data-bind="autoPct" data-type="pct" inputmode="decimal" maxlength="5" /><span class="vc-unit">% of pay</span></span><button type="button" data-step="autoPct" data-by="1" aria-label="Higher automatic contribution">+</button></div></div>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="vc-top" aria-live="polite">
+            <span class="vc-eye">Annual savings</span>
+            <div class="vc-big"><span data-tween="annual"></span> <small>a year</small></div>
+            <p data-out="annualLine"></p>
+          </div>
+          <div class="vc-compare" data-needs-match>
+            <span class="vc-eye">Where your savings come from</span>
+            <div class="vc-split" data-out="splitHtml"></div>
+            <div class="vc-notes" data-out="empNotes"></div>
+          </div>
+          <div class="vc-sec vc-chart">
+            <div class="vc-legend"></div>
+            <svg class="vc-svg" viewBox="0 0 600 240" role="img" aria-label="How your savings grow until you retire"></svg>
+            <p class="vc-cnote" data-out="chartNote"></p>
+            <details class="vc-future">
+              <summary>In future dollars <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+              <div class="vc-fbody"></div>
+            </details>
+          </div>
+          <div class="vc-sec vc-scen">
+            <span class="vc-eye">Try a scenario</span>
+            <div class="vc-chips">
+              <button type="button" class="vc-chip" data-scen="sooner">Start saving 5 years sooner</button>
+              <button type="button" class="vc-chip" data-scen="later">Start saving 5 years later</button>
+              <button type="button" class="vc-chip" data-scen="less">Spend $10,000 less a year in retirement</button>
+              <button type="button" class="vc-chip" data-scen="reset">Reset to example</button>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <article class="prose" id="close" data-edit="article closing (v6)">
+        <p>Once you have your yearly savings amount, you can turn it into a plan.
+          Learn how to <a class="soon">make a budget</a> to help you reach your
+          retirement goal.</p>
+
+        <div class="concepts">
+          <h3>Core financial concepts this page builds on</h3>
+          <ul class="buildson">
+            <li><a class="soon">Compound growth</a></li>
+            <li><a class="soon">Inflation</a></li>
+            <li><a class="soon">Portfolio allocation</a></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="band nextband">
+    <div class="in">
+      <a class="nextup soon">
+        <span class="nlabel">Next in this topic</span>
+        <span class="nname">Risks in retirement planning</span>
+        <span class="nsub">Your plan rests on estimates. What happens when returns, inflation or how long you live turn out differently, and how to adjust.</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- v6: sticky step tracker. Appears once the two-step map has scrolled
+       away, sits under the site header, and marks which step you are reading.
+       Outside every data-edit region; driven by the small script below. -->
+  <div class="stbar" id="stbar" aria-label="Where you are in the article">
+    <div class="stbar-in">
+      <a class="sbstep" data-step="1" href="#step-one"><span class="sbpill">Step 1</span><span class="sbname">Find your target number</span></a>
+      <span class="sbline" aria-hidden="true"></span>
+      <a class="sbstep two" data-step="2" href="#step-two"><span class="sbpill">Step 2</span><span class="sbname">Plan how to get there</span></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="in fgrid">
+    <div>
+      <p class="fbrand">Pinecone<small>by Stanford</small></p>
+      <p class="fline">Free personal finance education from the Stanford Initiative
+        for Financial Decision-Making.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* v9 calculator, matched to the Vercel version: the same inputs, defaults,
+   formulas and employer split. Everything is in today's dollars: each return
+   is entered before inflation, and inflation is subtracted from it.
+   Nothing is stored. */
+(function () {
+  var DEFAULTS = { monthly: 5000, other: 0, years: 30, retReturn: 4, inflation: 2,
+    ytr: 35, saved: 0, workReturn: 9,
+    hasMatch: false, hasAuto: false, salary: 50000, matchPct: 100, matchCap: 5,
+    hasTier2: false, tier2Pct: 50, tier2Cap: 2, autoPct: 3 };
+  /* one table: the minus / plus buttons and typed values both stop here */
+  var LIMITS = {
+    monthly: [0, 100000, 'Up to $100,000 a month'],
+    other: [0, 100000, 'Up to $100,000 a month'],
+    years: [1, 60, 'Between 1 and 60 years'],
+    retReturn: [0, 20, 'Between 0% and 20%'],
+    inflation: [0, 15, 'Between 0% and 15%'],
+    ytr: [1, 60, 'Between 1 and 60 years'],
+    saved: [0, 100000000, 'Up to $100,000,000'],
+    workReturn: [0, 20, 'Between 0% and 20%'],
+    salary: [0, 10000000, 'Up to $10,000,000'],
+    matchPct: [0, 200, 'Between 0% and 200%'],
+    matchCap: [0, 100, 'Between 0% and 100%'],
+    tier2Pct: [0, 200, 'Between 0% and 200%'],
+    tier2Cap: [0, 100, 'Between 0% and 100%'],
+    autoPct: [0, 100, 'Between 0% and 100%'] };
+  /* IRS limits, all in one place. Update every January.
+     2027: employee 25500, catchUp50 8500, comp 375000 (IRA stays 7500). */
+  var IRS = { year: 2026,
+    employee: 24500,   /* the most you can put into a workplace plan */
+    catchUp50: 8000,   /* extra allowed at age 50 and older */
+    comp: 360000,      /* employer contributions are figured on pay up to this */
+    ira: 7500 };
+
+  var s = copy(DEFAULTS);
+  function copy(o) { var x = {}; for (var k in o) x[k] = o[k]; return x; }
+  function clamp(key, v) { var l = LIMITS[key]; return l ? Math.min(l[1], Math.max(l[0], v)) : v; }
+
+  var $ = function (q, el) { return (el || document).querySelector(q); };
+  var $$ = function (q, el) { return [].slice.call((el || document).querySelectorAll(q)); };
+  var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  var short = function (n) { return n >= 1e6 ? '$' + (n / 1e6).toFixed(2) + 'M' : n >= 1e3 ? '$' + Math.round(n / 1e3) + 'k' : money(n); };
+  var pct = function (n) { return (Math.round(n * 100) / 100) + '%'; };
+  var yrs = function (n) { return n + (n === 1 ? ' year' : ' years'); };
+
+  function pv(C, r, T) { return r === 0 ? C * T : C / r * (1 - Math.pow(1 + r, -T)); }
+  function pmt(P, r, T) { return r === 0 ? P / T : P * r / (1 - Math.pow(1 + r, -T)); }
+  function savingsNeeded(target, S, r, N) {
+    var grown = S * Math.pow(1 + r, N), rem = Math.max(0, target - grown);
+    return r === 0 ? rem / N : rem * r / (Math.pow(1 + r, N) - 1);
+  }
+  function matchTiers() {
+    if (!s.hasMatch) return [];
+    var t = [{ rate: s.matchPct / 100, upto: s.matchCap / 100 }];
+    if (s.hasTier2) t.push({ rate: s.tier2Pct / 100, upto: s.tier2Cap / 100 });
+    return t.filter(function (x) { return x.upto > 0; });
+  }
+  /* split the yearly amount into what you put in, the match and the
+     automatic part: the automatic part comes first, then each match level
+     fills up (your dollar plus the match on it), then you cover the rest.
+     Employer money is figured on pay up to IRS.comp, and only what you put
+     in up to IRS.employee can be matched. fullYou / fullMatch are what it
+     takes to get the whole match, whatever you need. */
+  function employerSplit(total) {
+    var pay = Math.min(s.salary, IRS.comp), autoFull = s.hasAuto ? pay * s.autoPct / 100 : 0;
+    var tiers = matchTiers(), room = IRS.employee, bands = [];
+    for (var i = 0; i < tiers.length; i++) {
+      var band = Math.min(tiers[i].upto * pay, room); room -= band;
+      bands.push({ band: band, rate: tiers[i].rate });
+    }
+    var fullYou = 0, fullMatch = 0;
+    bands.forEach(function (b) { fullYou += b.band; fullMatch += b.band * b.rate; });
+    var base = { auto: autoFull, fullYou: fullYou, fullMatch: fullMatch };
+    var need = total - autoFull;
+    if (need <= 0) return mix(base, { you: 0, match: 0, autoCovers: true });
+    var you = 0, match = 0;
+    for (i = 0; i < bands.length; i++) {
+      var b = bands[i], full = b.band * (1 + b.rate);
+      if (need <= full) { var x = need / (1 + b.rate); return mix(base, { you: you + x, match: match + x * b.rate }); }
+      you += b.band; match += b.band * b.rate; need -= full;
+    }
+    return mix(base, { you: you + need, match: match });
+  }
+  function mix(a, b) { var x = copy(a); for (var k in b) x[k] = b[k]; return x; }
+  function compute() {
+    var yearlyNeed = Math.max(0, s.monthly - s.other) * 12, T = Math.max(1, s.years);
+    var rRet = (s.retReturn - s.inflation) / 100, target = pv(yearlyNeed, rRet, T);
+    var N = Math.max(1, s.ytr), rWork = (s.workReturn - s.inflation) / 100;
+    var annual = savingsNeeded(target, s.saved, rWork, N), sp = employerSplit(annual);
+    return { yearlyNeed: yearlyNeed, T: T, rRet: rRet, target: target, N: N, rWork: rWork,
+      annual: annual, you: sp.you, match: sp.match, auto: sp.auto,
+      autoCovers: !!sp.autoCovers, fullYou: sp.fullYou, fullMatch: sp.fullMatch };
+  }
+
+  /* the big numbers count to their new value */
+  function tween(el, to) {
+    var from = el._v === undefined ? to : el._v;
+    el._v = to;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || from === to) { el.textContent = money(to); return; }
+    var start = performance.now(), dur = 450;
+    cancelAnimationFrame(el._raf);
+    (function step(now) {
+      var t = Math.min(1, (now - start) / dur), e = 1 - Math.pow(1 - t, 3);
+      el.textContent = money(from + (to - from) * e);
+      if (t < 1) el._raf = requestAnimationFrame(step);
+    })(start);
+  }
+
+  function format(key, type) {
+    var v = s[key];
+    return type === 'money' ? Math.round(v).toLocaleString('en-US') : String(Math.round(v * 100) / 100);
+  }
+
+  function render() {
+    var c = compute(), anyEmp = s.hasMatch || s.hasAuto;
+    var compare = '';
+    if (s.inflation > 0 && c.target > 0) {
+      var nominal = pv(c.yearlyNeed, s.retReturn / 100, c.T), supports = pmt(nominal, c.rRet, c.T);
+      compare = 'If you <b>ignored inflation</b> and used ' + pct(s.retReturn) + ', your target would be ' +
+        money(nominal) + ' (about ' + money(Math.abs(c.target - nominal)) + ' ' + (c.target >= nominal ? 'less' : 'more') +
+        (s.other > 0
+          ? '). In today&rsquo;s dollars, that plus your ' + money(s.other * 12) + ' a year in other income would only cover about ' +
+            money(supports + s.other * 12) + ' a year'
+          : '). In today&rsquo;s dollars, that would only support about ' + money(supports) + ' a year') +
+        (c.target > nominal ? ', falling short of your ' + money(s.monthly * 12) + ' goal' : '') + '.';
+    }
+    var grown = s.saved * Math.pow(1 + c.rWork, c.N);
+    /* notes under "Where your savings come from" */
+    var notes = [];
+    if (anyEmp) {
+      var fullMatchTxt = 'you&rsquo;d put in ' + money(c.fullYou) + ' and your employer would add ' + money(c.fullMatch);
+      if (c.autoCovers) {
+        notes.push('Your employer&rsquo;s automatic contribution, ' + money(c.auto) + ' a year, covers the ' + money(c.annual) +
+          ' you need without you putting in anything. Anything you add builds a cushion.' +
+          (c.fullMatch > 0 ? ' To also get your full match, ' + fullMatchTxt + '.' : ''));
+      } else if (c.fullMatch > 0 && c.you < c.fullYou - 0.5) {
+        notes.push('To get your full match, ' + fullMatchTxt + '. That&rsquo;s more than you need, and the extra builds a cushion.');
+      }
+      if (c.you > IRS.employee) {
+        notes.push('Your part is above the ' + money(IRS.employee) + ' you can put into a workplace plan in ' + IRS.year +
+          ' (' + money(IRS.employee + IRS.catchUp50) + ' if you&rsquo;re 50 or older). The extra ' + money(c.you - IRS.employee) +
+          ' would need to be saved outside your workplace plan.');
+      }
+      if (s.salary > IRS.comp) {
+        notes.push('Employer contributions are figured on pay up to ' + money(IRS.comp) + ', the ' + IRS.year + ' IRS limit.');
+      }
+    }
+    var empNotes = notes.map(function (n) { return '<p>' + n + '</p>'; }).join('');
+    var out = {
+      targetTxt: money(c.target),
+      targetLine: c.target === 0
+        ? 'Your other income covers your expected spending, so you don&rsquo;t need savings to cover it. Savings can still help with costs that are hard to predict, like health care or home repairs.'
+        : 'With this saved in today&rsquo;s dollars on the day you retire' +
+          (s.other > 0 ? ', plus your ' + money(s.other * 12) + ' a year in other income' : '') +
+          ', you can spend what ' + money(s.monthly * 12) +
+          ' buys today every year for ' + yrs(c.T) + ', until your savings run out.',
+      compareLine: compare,
+      empRow: !anyEmp ? 'None' : c.annual === 0 ? '$0 a year' : money(c.match + c.auto) + ' a year',
+      annualLine: c.annual === 0 && c.target === 0
+        ? 'Since your other income covers your expected spending, you don&rsquo;t need to save to reach a target. Anything you save adds a cushion for surprises.'
+        : c.annual === 0
+        ? 'What you&rsquo;ve already saved, ' + money(s.saved) + ', is on track to grow to about ' + money(grown) +
+          ' in today&rsquo;s dollars by the day you retire, which covers your ' + money(c.target) + ' target. Keep it invested, and anything more you save adds a cushion.'
+        : 'This is in today&rsquo;s dollars. In practice, you would save <b>' + money(c.annual) + ' in your first year</b>, then raise the amount by ' +
+          pct(s.inflation) + ' each year to keep up with inflation, so every year you are setting aside the equivalent of ' + money(c.annual) + ' of today&rsquo;s spending.',
+      splitHtml: anyEmp
+        ? '<div><span>You save</span><b class="num">' + money(c.you) + '</b></div>' +
+          (s.hasMatch ? '<div><span>Employer match</span><b class="num">' + money(c.match) + '</b></div>' : '') +
+          (s.hasAuto ? '<div><span>Automatic</span><b class="num">' + money(c.auto) + '</b></div>' : '')
+        : '',
+      empNotes: empNotes,
+      spendYr: money(s.monthly * 12) + ' a year',
+      otherYr: money(s.other * 12) + ' a year'
+    };
+    $$('.vc [data-out]').forEach(function (el) { var v = out[el.getAttribute('data-out')]; if (v !== undefined) el.innerHTML = v; });
+    $$('.vc [data-needs-compare]').forEach(function (el) { el.hidden = !compare; });
+    $$('.vc [data-needs-match]').forEach(function (el) { el.hidden = !anyEmp || c.annual === 0; });
+    $$('.vc .vc-notes').forEach(function (el) { el.hidden = !empNotes; });
+    $$('.vc [data-tween]').forEach(function (el) { tween(el, c[el.getAttribute('data-tween')]); });
+
+    $$('.vc [data-bind]').forEach(function (input) {
+      if (document.activeElement !== input) input.value = format(input.getAttribute('data-bind'), input.getAttribute('data-type'));
+    });
+    $$('.vc .acc-salary').forEach(function (el) { el.hidden = !anyEmp; });
+    $$('.vc .acc-match').forEach(function (el) { el.hidden = !s.hasMatch; });
+    $$('.vc .acc-auto').forEach(function (el) { el.hidden = !s.hasAuto; });
+    $$('.vc .acc-tier2').forEach(function (el) { el.hidden = !(s.hasMatch && s.hasTier2); });
+    $$('.vc [data-kind]').forEach(function (b) { b.setAttribute('aria-pressed', String(s[b.getAttribute('data-kind')])); });
+    $$('.vc [data-plan]').forEach(function (b) {
+      var p = b.getAttribute('data-plan').split(',').map(Number);
+      var on = s.matchPct === p[0] && s.matchCap === p[1] &&
+        (p[2] === undefined ? !s.hasTier2 : s.hasTier2 && s.tier2Pct === p[2] && s.tier2Cap === p[3]);
+      b.setAttribute('aria-pressed', String(on));
+    });
+    $$('.vc .vc-tier2').forEach(function (t2) {
+      t2.setAttribute('aria-expanded', String(s.hasTier2));
+      $('span', t2).textContent = s.hasTier2 ? 'Remove second level' : '+ Add a second level';
+    });
+    drawAll(c);
+  }
+
+  function drawAll(c) { $$('.vc').forEach(function (inst) { drawChart(inst, c); }); }
+  function drawChart(inst, c) {
+    /* drawn at its real on-screen width, so the 12px labels stay 12px on a
+       phone; a chart on a hidden tab is drawn when its tab opens */
+    var svg = $('.vc-svg', inst); if (!svg) return;
+    var sw = svg.getBoundingClientRect().width; if (!sw) return;
+    var W = Math.round(Math.max(260, sw)),
+        H = W < 480 ? 200 : 240, L = 48, R = 12, Tp = 12, B = 30;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    /* what actually goes in each year: with an employer this can be more
+       than needed, when its automatic contribution alone covers the need */
+    var anyE = s.hasMatch || s.hasAuto, emp = anyE ? c.match + c.auto : 0;
+    var youYear = anyE ? c.you : c.annual, yearIn = youYear + emp;
+    var pts = [], bal = s.saved;
+    for (var t = 0; t <= c.N; t++) {
+      if (t > 0) bal = bal * (1 + c.rWork) + yearIn;
+      pts.push({ t: t, bal: bal, put: s.saved + yearIn * t, you: s.saved + youYear * t });
+    }
+    var max = Math.max.apply(null, [1].concat(pts.map(function (p) { return Math.max(p.bal, p.put); })));
+    var x = function (t) { return L + (t / c.N) * (W - L - R); };
+    var y = function (v) { return Tp + (1 - Math.max(0, v) / max) * (H - Tp - B); };
+    var area = function (key) {
+      return 'M' + x(0) + ',' + y(0) + ' ' + pts.map(function (p) { return 'L' + x(p.t).toFixed(1) + ',' + y(p[key]).toFixed(1); }).join(' ') + ' L' + x(c.N) + ',' + y(0) + ' Z';
+    };
+    var ticks = [0, max / 2, max].map(function (v) {
+      return '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="var(--line)"/><text x="' + (L - 8) + '" y="' + (y(v) + 4) + '" text-anchor="end">' + short(v) + '</text>';
+    }).join('');
+    var mid = Math.round(c.N / 2);
+    var xt = [[0, 'start', 'Today'], [mid, 'middle', 'Year ' + mid], [c.N, 'end', 'Retire in ' + yrs(c.N)]].map(function (a) {
+      return '<text x="' + x(a[0]) + '" y="' + (H - 8) + '" text-anchor="' + a[1] + '">' + a[2] + '</text>';
+    }).join('');
+    var last = pts[pts.length - 1];
+    svg.innerHTML = ticks + '<path d="' + area('bal') + '" fill="var(--g)"/>' +
+      (emp > 0 ? '<path d="' + area('put') + '" fill="var(--leaf)"/>' : '') +
+      '<path d="' + area(emp > 0 ? 'you' : 'put') + '" fill="var(--sky)"/>' + xt +
+      '<circle cx="' + x(c.N) + '" cy="' + y(last.bal) + '" r="5" fill="var(--g)" stroke="var(--paper)" stroke-width="2"/>';
+    var key = function (col, label, val) { return '<span><i style="background:var(' + col + ')"></i>' + label + ' <b class="num">' + money(val) + '</b></span>'; };
+    $('.vc-legend', inst).innerHTML = (emp > 0
+      ? key('--sky', 'You save', last.you) + key('--leaf', 'Your employer puts in', last.put - last.you)
+      : key('--sky', 'What you save', last.put)) + key('--g', 'Growth', Math.max(0, last.bal - last.put));
+
+    var infl = s.inflation / 100, grow = function (k) { return Math.pow(1 + infl, k); };
+    var shown = [1, 10, 20, 30, c.N].filter(function (k, i, a) { return k <= c.N && a.indexOf(k) === i; });
+    var rows = shown.map(function (k) { return '<tr><td>Year ' + k + (k === c.N && k !== 1 ? ' (last)' : '') + '</td><td>' + money(c.annual * grow(k - 1)) + '</td></tr>'; }).join('');
+    var nominalIn = infl === 0 ? c.annual * c.N : c.annual * (grow(c.N) - 1) / infl;
+    var about = function (v) { return money(Math.round(v / 1000) * 1000); };
+    $('.vc-fbody', inst).innerHTML = c.annual === 0
+      ? '<p>You don&rsquo;t need to add yearly savings, so there&rsquo;s nothing to adjust for inflation.</p>'
+      : infl === 0
+      ? '<p>With 0% inflation, today&rsquo;s dollars and future dollars are the same, so you&rsquo;d save ' + money(c.annual) + ' every year.</p>'
+      : '<p>Prices rise, so to keep saving the same ' + money(c.annual) + ' in today&rsquo;s money, the amount you set aside grows ' + pct(s.inflation) + ' a year:</p>' +
+        '<table class="vc-ftable"><thead><tr><th scope="col">Year</th><th scope="col">Save that year</th></tr></thead><tbody>' + rows + '</tbody></table>' +
+        '<p>Over ' + yrs(c.N) + ' you would put in about <b class="num">' + about(nominalIn) + '</b>, and have about <b class="num">' + about(last.bal * grow(c.N)) +
+        '</b> on the day you retire. That buys what ' + money(last.bal) + ' buys today, assuming ' + pct(s.inflation) + ' inflation.</p>';
+    $('[data-out="chartNote"]', inst).innerHTML = c.annual === 0
+      ? (s.saved > 0 ? 'In today&rsquo;s dollars, your ' + money(s.saved) + ' grows to <b>' + money(last.bal) + '</b> by the day you retire, without adding more.'
+                     : 'With a $0 target, there&rsquo;s nothing you need to save toward.')
+      : 'In today&rsquo;s dollars, saving ' + money(c.annual) + ' a year for ' + yrs(c.N) + ' reaches <b>' + money(Math.max(last.bal, c.target)) + '</b> by the day you retire.';
+  }
+
+  /* a short note under a row when a typed value was outside its range */
+  function note(input, text) {
+    var row = input.closest('.vc-row'); if (!row) return;
+    var n = row.nextElementSibling;
+    if (!n || !n.classList.contains('vc-clamp')) {
+      n = document.createElement('p'); n.className = 'vc-clamp'; n.setAttribute('role', 'status');
+      row.parentNode.insertBefore(n, row.nextSibling);
+    }
+    n.textContent = text;
+    clearTimeout(n._t); n._t = setTimeout(function () { n.remove(); }, 3500);
+  }
+
+  $$('.vc [data-bind]').forEach(function (input) {
+    var key = input.getAttribute('data-bind'), type = input.getAttribute('data-type');
+    input.addEventListener('input', function () {
+      var raw = input.value.replace(type === 'pct' ? /[^0-9.]/g : /[^0-9]/g, '');
+      var v = parseFloat(raw); if (isNaN(v)) v = 0;
+      input._raw = v;
+      s[key] = clamp(key, v);
+      if (type === 'money') {
+        var caret = input.selectionStart == null ? input.value.length : input.selectionStart;
+        var before = input.value.slice(0, caret).replace(/[^0-9]/g, '').length;
+        input.value = raw === '' ? '' : v.toLocaleString('en-US');
+        var pos = 0, seen = 0;
+        while (pos < input.value.length && seen < before) { if (/[0-9]/.test(input.value[pos])) seen++; pos++; }
+        input.setSelectionRange(pos, pos);
+      }
+      render();
+    });
+    input.addEventListener('focus', function () { input._raw = s[key]; input.select(); });
+    input.addEventListener('blur', function () {
+      var l = LIMITS[key];
+      if (l && (input._raw < l[0] || input._raw > l[1])) note(input, l[2]);
+      render();
+    });
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.isComposing && e.keyCode !== 229) input.blur(); });
+  });
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target : null; if (!t) return;
+    var tip = t.closest('.vc-tipb');
+    $$('.vc-tipb[aria-expanded="true"]').forEach(function (b) { if (b !== tip) b.setAttribute('aria-expanded', 'false'); });
+    if (tip) { tip.setAttribute('aria-expanded', String(tip.getAttribute('aria-expanded') !== 'true')); return; }
+    if (!t.closest('.vc')) return;
+
+    var b = t.closest('[data-step]');
+    if (b) {
+      var k = b.getAttribute('data-step');
+      s[k] = clamp(k, Math.round((s[k] + Number(b.getAttribute('data-by'))) * 100) / 100);
+      render(); return;
+    }
+    b = t.closest('[data-kind]');
+    if (b) { var kk = b.getAttribute('data-kind'); s[kk] = !s[kk]; render(); return; }
+    b = t.closest('[data-plan]');
+    if (b) {
+      var p = b.getAttribute('data-plan').split(',').map(Number);
+      s.matchPct = p[0]; s.matchCap = p[1]; s.hasTier2 = p[2] !== undefined;
+      if (s.hasTier2) { s.tier2Pct = p[2]; s.tier2Cap = p[3]; }
+      render(); return;
+    }
+    if (t.closest('.vc-tier2')) {
+      s.hasTier2 = !s.hasTier2; render();
+      if (s.hasTier2) $('[data-bind="tier2Pct"]', t.closest('.vc')).focus();
+      return;
+    }
+    b = t.closest('.vc-tab');
+    if (b) { showTab(b); return; }
+    b = t.closest('.vc-edit');
+    if (b) { e.preventDefault(); var t1 = $('.vc-tab', t.closest('.vc')); showTab(t1); t1.focus(); return; }
+    b = t.closest('[data-scen]');
+    if (b) {
+      var sc = b.getAttribute('data-scen');
+      if (sc === 'less') s.monthly = Math.max(s.other, s.monthly - 10000 / 12);
+      if (sc === 'fewer') s.years = clamp('years', s.years - 5);
+      if (sc === 'more') s.years = clamp('years', s.years + 5);
+      if (sc === 'sooner') s.ytr = clamp('ytr', s.ytr + 5);
+      if (sc === 'later') s.ytr = clamp('ytr', s.ytr - 5);
+      if (sc === 'reset') s = copy(DEFAULTS);
+      render();
+    }
+  });
+  /* tabs: each calculator switches between its two steps on its own */
+  function showTab(tab) {
+    var inst = tab.closest('.vc');
+    $$('.vc-tab', inst).forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    render();
+  }
+  /* the article's link to the calculator opens it on Step One */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#a-calculator"]');
+    if (a) showTab($('#a-vc-t1'));
+  });
+  document.addEventListener('keydown', function (e) {
+    var tab = e.target.closest && e.target.closest('.vc-tab');
+    if (tab && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+      var tabs = $$('.vc-tab', tab.closest('.vc')), i = tabs.indexOf(tab);
+      var next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      showTab(next); next.focus(); e.preventDefault(); return;
+    }
+    if (e.key === 'Escape') $$('.vc-tipb[aria-expanded="true"]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+  });
+
+  var rt; addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { drawAll(compute()); }, 120); });
+  render();
+})();
+</script>
+<script>
+/* v6 sticky step tracker. Shown between the two-step map and the closing
+   section; the active step is whichever h2 has passed under the bar. */
+(function(){
+  var bar=document.getElementById('stbar'), hdr=document.querySelector('.top'),
+      map=document.querySelector('.steps'), s2=document.getElementById('step-two'),
+      end=document.getElementById('close');
+  if(!bar||!hdr||!map||!s2||!end) return;
+  var steps=bar.querySelectorAll('.sbstep');
+  function update(){
+    /* the header scrolls away with the page, so the bar sits just below
+       whatever part of it is still on screen (usually none, so the top) */
+    var h=Math.max(0,hdr.getBoundingClientRect().bottom), line=h+bar.offsetHeight+24;
+    bar.style.top=h+'px';
+    document.documentElement.style.scrollPaddingTop=(bar.offsetHeight+14)+'px';
+    var show=map.getBoundingClientRect().bottom<h && end.getBoundingClientRect().top>line;
+    bar.classList.toggle('on',show);
+    bar.setAttribute('aria-hidden',show?'false':'true');
+    var cur=s2.getBoundingClientRect().top<line?'2':'1';
+    for(var i=0;i<steps.length;i++){
+      var on=steps[i].getAttribute('data-step')===cur;
+      steps[i].classList.toggle('cur',on);
+      if(on) steps[i].setAttribute('aria-current','step'); else steps[i].removeAttribute('aria-current');
+      steps[i].tabIndex=show?0:-1;
+    }
+  }
+  /* plain call, not requestAnimationFrame: the work is a few rect reads,
+     and rAF is throttled in background frames, which left the bar stale. */
+  function req(){ update(); }
+  addEventListener('scroll',req,{passive:true}); addEventListener('resize',req);
+  addEventListener('load',update);
+  update();
+})();
+</script>
+</body>
+</html>
