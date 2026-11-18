@@ -698,7 +698,7 @@ body.editing{padding-bottom:132px}
 
 /* GitHub share copy: links to pages not built yet keep their link styling
    but have no href, so they show where a link will go without dead-ending */
-.prose a.soon,a.nextup.soon{cursor:help}
+.prose a.soon,a.nextup.soon{cursor:pointer}
 
 /* ------------------------------------------------- two-step map (v6)
    Two lines, each led by a teal "Step N" pill. Each line jumps to its h2. */
